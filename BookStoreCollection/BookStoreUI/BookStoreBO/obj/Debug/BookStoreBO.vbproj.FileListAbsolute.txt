@@ -1,0 +1,10 @@
+C:\Users\Darwin\Documents\COP4005 - Windows Programming for IT Majors\GROUP_Project\BookStoreCollection\BookStoreUI\BookStoreBO\bin\Debug\BookStoreBO.dll
+C:\Users\Darwin\Documents\COP4005 - Windows Programming for IT Majors\GROUP_Project\BookStoreCollection\BookStoreUI\BookStoreBO\bin\Debug\BookStoreBO.pdb
+C:\Users\Darwin\Documents\COP4005 - Windows Programming for IT Majors\GROUP_Project\BookStoreCollection\BookStoreUI\BookStoreBO\bin\Debug\BookStoreBO.xml
+C:\Users\Darwin\Documents\COP4005 - Windows Programming for IT Majors\GROUP_Project\BookStoreCollection\BookStoreUI\BookStoreBO\obj\Debug\BookStoreBO.vbprojAssemblyReference.cache
+C:\Users\Darwin\Documents\COP4005 - Windows Programming for IT Majors\GROUP_Project\BookStoreCollection\BookStoreUI\BookStoreBO\obj\Debug\BookStoreBO.Resources.resources
+C:\Users\Darwin\Documents\COP4005 - Windows Programming for IT Majors\GROUP_Project\BookStoreCollection\BookStoreUI\BookStoreBO\obj\Debug\BookStoreBO.vbproj.GenerateResource.cache
+C:\Users\Darwin\Documents\COP4005 - Windows Programming for IT Majors\GROUP_Project\BookStoreCollection\BookStoreUI\BookStoreBO\obj\Debug\BookStoreBO.vbproj.CoreCompileInputs.cache
+C:\Users\Darwin\Documents\COP4005 - Windows Programming for IT Majors\GROUP_Project\BookStoreCollection\BookStoreUI\BookStoreBO\obj\Debug\BookStoreBO.dll
+C:\Users\Darwin\Documents\COP4005 - Windows Programming for IT Majors\GROUP_Project\BookStoreCollection\BookStoreUI\BookStoreBO\obj\Debug\BookStoreBO.xml
+C:\Users\Darwin\Documents\COP4005 - Windows Programming for IT Majors\GROUP_Project\BookStoreCollection\BookStoreUI\BookStoreBO\obj\Debug\BookStoreBO.pdb
