@@ -107,7 +107,7 @@ Partial Class frmTitles
         Me.TitlesBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.TitlesBindingNavigator.Name = "TitlesBindingNavigator"
         Me.TitlesBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.TitlesBindingNavigator.Size = New System.Drawing.Size(758, 27)
+        Me.TitlesBindingNavigator.Size = New System.Drawing.Size(568, 27)
         Me.TitlesBindingNavigator.TabIndex = 0
         Me.TitlesBindingNavigator.Text = "BindingNavigator1"
         '
@@ -123,7 +123,7 @@ Partial Class frmTitles
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 24)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -163,8 +163,9 @@ Partial Class frmTitles
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 27)
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(38, 23)
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
@@ -206,9 +207,10 @@ Partial Class frmTitles
         '
         'btnEnter
         '
-        Me.btnEnter.Location = New System.Drawing.Point(249, 241)
+        Me.btnEnter.Location = New System.Drawing.Point(187, 196)
+        Me.btnEnter.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnEnter.Name = "btnEnter"
-        Me.btnEnter.Size = New System.Drawing.Size(75, 23)
+        Me.btnEnter.Size = New System.Drawing.Size(56, 19)
         Me.btnEnter.TabIndex = 2
         Me.btnEnter.Text = "Enter"
         Me.btnEnter.UseVisualStyleBackColor = True
@@ -216,17 +218,20 @@ Partial Class frmTitles
         'lblTitles
         '
         Me.lblTitles.AutoSize = True
-        Me.lblTitles.Location = New System.Drawing.Point(12, 243)
+        Me.lblTitles.Location = New System.Drawing.Point(9, 197)
+        Me.lblTitles.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTitles.Name = "lblTitles"
-        Me.lblTitles.Size = New System.Drawing.Size(39, 17)
+        Me.lblTitles.Size = New System.Drawing.Size(30, 13)
         Me.lblTitles.TabIndex = 3
         Me.lblTitles.Text = "Title:"
         '
         'txtTitles
         '
-        Me.txtTitles.Location = New System.Drawing.Point(57, 241)
+        Me.txtTitles.Location = New System.Drawing.Point(43, 196)
+        Me.txtTitles.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtTitles.MaxLength = 80
         Me.txtTitles.Name = "txtTitles"
-        Me.txtTitles.Size = New System.Drawing.Size(186, 22)
+        Me.txtTitles.Size = New System.Drawing.Size(140, 20)
         Me.txtTitles.TabIndex = 4
         '
         'DataGridViewTextBoxColumn10
@@ -295,22 +300,24 @@ Partial Class frmTitles
         Me.TitlesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TitlesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10})
         Me.TitlesDataGridView.DataSource = Me.TitlesBindingSource
-        Me.TitlesDataGridView.Location = New System.Drawing.Point(12, 45)
+        Me.TitlesDataGridView.Location = New System.Drawing.Point(9, 37)
+        Me.TitlesDataGridView.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TitlesDataGridView.Name = "TitlesDataGridView"
         Me.TitlesDataGridView.RowTemplate.Height = 24
-        Me.TitlesDataGridView.Size = New System.Drawing.Size(708, 160)
+        Me.TitlesDataGridView.Size = New System.Drawing.Size(531, 130)
         Me.TitlesDataGridView.TabIndex = 1
         '
         'frmTitles
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(758, 293)
+        Me.ClientSize = New System.Drawing.Size(568, 238)
         Me.Controls.Add(Me.txtTitles)
         Me.Controls.Add(Me.lblTitles)
         Me.Controls.Add(Me.btnEnter)
         Me.Controls.Add(Me.TitlesDataGridView)
         Me.Controls.Add(Me.TitlesBindingNavigator)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmTitles"
         Me.Text = "frmTitles"
         CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).EndInit()

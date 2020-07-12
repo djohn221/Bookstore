@@ -78,7 +78,7 @@ Partial Class frmPublisher
         Me.PublishersBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.PublishersBindingNavigator.Name = "PublishersBindingNavigator"
         Me.PublishersBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.PublishersBindingNavigator.Size = New System.Drawing.Size(935, 27)
+        Me.PublishersBindingNavigator.Size = New System.Drawing.Size(701, 27)
         Me.PublishersBindingNavigator.TabIndex = 0
         Me.PublishersBindingNavigator.Text = "BindingNavigator1"
         '
@@ -104,7 +104,7 @@ Partial Class frmPublisher
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 24)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -145,7 +145,7 @@ Partial Class frmPublisher
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 27)
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(38, 23)
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
@@ -207,25 +207,29 @@ Partial Class frmPublisher
         '
         'txtPublisher
         '
-        Me.txtPublisher.Location = New System.Drawing.Point(118, 391)
+        Me.txtPublisher.Location = New System.Drawing.Point(88, 318)
+        Me.txtPublisher.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPublisher.MaxLength = 40
         Me.txtPublisher.Name = "txtPublisher"
-        Me.txtPublisher.Size = New System.Drawing.Size(186, 22)
+        Me.txtPublisher.Size = New System.Drawing.Size(140, 20)
         Me.txtPublisher.TabIndex = 7
         '
         'lblPublishers
         '
         Me.lblPublishers.AutoSize = True
-        Me.lblPublishers.Location = New System.Drawing.Point(45, 394)
+        Me.lblPublishers.Location = New System.Drawing.Point(34, 320)
+        Me.lblPublishers.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblPublishers.Name = "lblPublishers"
-        Me.lblPublishers.Size = New System.Drawing.Size(71, 17)
+        Me.lblPublishers.Size = New System.Drawing.Size(53, 13)
         Me.lblPublishers.TabIndex = 6
         Me.lblPublishers.Text = "Publisher:"
         '
         'btnEnter
         '
-        Me.btnEnter.Location = New System.Drawing.Point(319, 388)
+        Me.btnEnter.Location = New System.Drawing.Point(239, 315)
+        Me.btnEnter.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnEnter.Name = "btnEnter"
-        Me.btnEnter.Size = New System.Drawing.Size(75, 23)
+        Me.btnEnter.Size = New System.Drawing.Size(56, 19)
         Me.btnEnter.TabIndex = 5
         Me.btnEnter.Text = "Enter"
         Me.btnEnter.UseVisualStyleBackColor = True
@@ -245,10 +249,11 @@ Partial Class frmPublisher
         Me.EmployeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.EmployeeDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13})
         Me.EmployeeDataGridView.DataSource = Me.EmployeeBindingSource
-        Me.EmployeeDataGridView.Location = New System.Drawing.Point(12, 53)
+        Me.EmployeeDataGridView.Location = New System.Drawing.Point(9, 43)
+        Me.EmployeeDataGridView.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.EmployeeDataGridView.Name = "EmployeeDataGridView"
         Me.EmployeeDataGridView.RowTemplate.Height = 24
-        Me.EmployeeDataGridView.Size = New System.Drawing.Size(766, 220)
+        Me.EmployeeDataGridView.Size = New System.Drawing.Size(574, 179)
         Me.EmployeeDataGridView.TabIndex = 7
         '
         'DataGridViewTextBoxColumn6
@@ -301,14 +306,15 @@ Partial Class frmPublisher
         '
         'frmPublisher
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(935, 455)
+        Me.ClientSize = New System.Drawing.Size(701, 370)
         Me.Controls.Add(Me.EmployeeDataGridView)
         Me.Controls.Add(Me.txtPublisher)
         Me.Controls.Add(Me.lblPublishers)
         Me.Controls.Add(Me.btnEnter)
         Me.Controls.Add(Me.PublishersBindingNavigator)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmPublisher"
         Me.Text = "Publishers"
         CType(Me.PublishersBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
