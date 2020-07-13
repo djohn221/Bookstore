@@ -8,11 +8,17 @@
 
     Private Sub frmTitles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'BookStoreDataSet.titles' table. You can move, or remove it, as needed.
-        Me.TitlesTableAdapter.Fill(Me.BookStoreDataSet.titles)
+        'Me.TitlesTableAdapter.Fill(Me.BookStoreDataSet.titles)
 
     End Sub
 
-    Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        Try
 
+            Me.TitlesTableAdapter.FillTitle(Me.BookStoreDataSet.titles, txtTitle.Text)
+            txtTitle.Text = String.Empty
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Data Input Error")
+        End Try
     End Sub
 End Class

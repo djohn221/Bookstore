@@ -29,17 +29,17 @@ Partial Class frmAuthors
         Me.AuthorsTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.authorsTableAdapter()
         Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
         Me.AuthorsBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.AuthorsBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.AuthorsDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,9 +51,11 @@ Partial Class frmAuthors
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.txtAuthor = New System.Windows.Forms.TextBox()
-        Me.lblAuthor = New System.Windows.Forms.Label()
-        Me.btnEnter = New System.Windows.Forms.Button()
+        Me.txtAuthorLastName = New System.Windows.Forms.TextBox()
+        Me.lblAuthorLastName = New System.Windows.Forms.Label()
+        Me.txtAuthorFirstName = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnAuthorName = New System.Windows.Forms.Button()
         CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AuthorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AuthorsBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,6 +112,31 @@ Partial Class frmAuthors
         Me.AuthorsBindingNavigator.TabIndex = 0
         Me.AuthorsBindingNavigator.Text = "BindingNavigator1"
         '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(24, 24)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(24, 24)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -142,16 +169,9 @@ Partial Class frmAuthors
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
         '
         'BindingNavigatorMoveNextItem
@@ -174,26 +194,8 @@ Partial Class frmAuthors
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(24, 24)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(24, 24)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'AuthorsBindingNavigatorSaveItem
         '
@@ -269,39 +271,59 @@ Partial Class frmAuthors
         Me.DataGridViewCheckBoxColumn1.HeaderText = "contract"
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         '
-        'txtAuthor
+        'txtAuthorLastName
         '
-        Me.txtAuthor.Location = New System.Drawing.Point(156, 343)
-        Me.txtAuthor.Name = "txtAuthor"
-        Me.txtAuthor.Size = New System.Drawing.Size(186, 22)
-        Me.txtAuthor.TabIndex = 7
+        Me.txtAuthorLastName.Location = New System.Drawing.Point(197, 362)
+        Me.txtAuthorLastName.MaxLength = 40
+        Me.txtAuthorLastName.Name = "txtAuthorLastName"
+        Me.txtAuthorLastName.Size = New System.Drawing.Size(186, 22)
+        Me.txtAuthorLastName.TabIndex = 7
         '
-        'lblAuthor
+        'lblAuthorLastName
         '
-        Me.lblAuthor.AutoSize = True
-        Me.lblAuthor.Location = New System.Drawing.Point(101, 349)
-        Me.lblAuthor.Name = "lblAuthor"
-        Me.lblAuthor.Size = New System.Drawing.Size(54, 17)
-        Me.lblAuthor.TabIndex = 6
-        Me.lblAuthor.Text = "Author:"
+        Me.lblAuthorLastName.AutoSize = True
+        Me.lblAuthorLastName.Location = New System.Drawing.Point(55, 367)
+        Me.lblAuthorLastName.Name = "lblAuthorLastName"
+        Me.lblAuthorLastName.Size = New System.Drawing.Size(126, 17)
+        Me.lblAuthorLastName.TabIndex = 6
+        Me.lblAuthorLastName.Text = "Author Last Name:"
         '
-        'btnEnter
+        'txtAuthorFirstName
         '
-        Me.btnEnter.Location = New System.Drawing.Point(375, 343)
-        Me.btnEnter.Name = "btnEnter"
-        Me.btnEnter.Size = New System.Drawing.Size(75, 23)
-        Me.btnEnter.TabIndex = 5
-        Me.btnEnter.Text = "Enter"
-        Me.btnEnter.UseVisualStyleBackColor = True
+        Me.txtAuthorFirstName.Location = New System.Drawing.Point(197, 410)
+        Me.txtAuthorFirstName.MaxLength = 40
+        Me.txtAuthorFirstName.Name = "txtAuthorFirstName"
+        Me.txtAuthorFirstName.Size = New System.Drawing.Size(186, 22)
+        Me.txtAuthorFirstName.TabIndex = 10
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(55, 410)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(126, 17)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Author First Name:"
+        '
+        'btnAuthorName
+        '
+        Me.btnAuthorName.Location = New System.Drawing.Point(420, 384)
+        Me.btnAuthorName.Name = "btnAuthorName"
+        Me.btnAuthorName.Size = New System.Drawing.Size(161, 43)
+        Me.btnAuthorName.TabIndex = 8
+        Me.btnAuthorName.Text = "Search Author Name"
+        Me.btnAuthorName.UseVisualStyleBackColor = True
         '
         'frmAuthors
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.txtAuthor)
-        Me.Controls.Add(Me.lblAuthor)
-        Me.Controls.Add(Me.btnEnter)
+        Me.Controls.Add(Me.txtAuthorFirstName)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnAuthorName)
+        Me.Controls.Add(Me.txtAuthorLastName)
+        Me.Controls.Add(Me.lblAuthorLastName)
         Me.Controls.Add(Me.AuthorsDataGridView)
         Me.Controls.Add(Me.AuthorsBindingNavigator)
         Me.Name = "frmAuthors"
@@ -344,7 +366,9 @@ Partial Class frmAuthors
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewCheckBoxColumn1 As DataGridViewCheckBoxColumn
-    Friend WithEvents txtAuthor As TextBox
-    Friend WithEvents lblAuthor As Label
-    Friend WithEvents btnEnter As Button
+    Friend WithEvents txtAuthorLastName As TextBox
+    Friend WithEvents lblAuthorLastName As Label
+    Friend WithEvents txtAuthorFirstName As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnAuthorName As Button
 End Class

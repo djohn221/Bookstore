@@ -7,7 +7,7 @@
         Me.SalesTableAdapter.Fill(Me.BookStoreDataSet.sales)
 
         lstCartItems.Items.Add(frmOrderScreen.lstCart.Items)
-        storeName = frmOrderScreen.cmbStore.SelectedItem
+        storeName = frmOrderScreen.cboStoreName.SelectedItem
         subtotal = frmOrderScreen.SubTotal
 
     End Sub

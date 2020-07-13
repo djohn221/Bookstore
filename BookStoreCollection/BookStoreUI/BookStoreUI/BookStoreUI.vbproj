@@ -98,6 +98,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BookStoreDataSet.vb">
+      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmOrderScreen.Designer.vb">
       <DependentUpon>frmOrderScreen.vb</DependentUpon>
     </Compile>
@@ -227,12 +230,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BookStoreBO\BookStoreBO.vbproj">
-      <Project>{2168cac7-d34a-4b6c-bf50-87f6652459c1}</Project>
-      <Name>BookStoreBO</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
