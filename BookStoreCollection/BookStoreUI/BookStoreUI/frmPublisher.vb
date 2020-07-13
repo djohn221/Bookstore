@@ -13,4 +13,5 @@
         Me.PublishersTableAdapter.Fill(Me.BookStoreDataSet.publishers)
 
     End Sub
+
 End Class

@@ -23,25 +23,7 @@ Partial Class frmOrderScreen
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOrderScreen))
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
-        Me.TitlesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TitlesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.titlesTableAdapter()
-        Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
-        Me.TitlesBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.TitlesBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.lstCart = New System.Windows.Forms.ListBox()
         Me.TitlesDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,6 +35,8 @@ Partial Class frmOrderScreen
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TitlesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
         Me.lblCatalog = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -70,162 +54,22 @@ Partial Class frmOrderScreen
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
-        CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TitlesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TitlesBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TitlesBindingNavigator.SuspendLayout()
+        Me.TitlesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.titlesTableAdapter()
+        Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
+        Me.cmbStore = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.TitlesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TitlesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ListBox1
+        'lstCart
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(562, 145)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(311, 225)
-        Me.ListBox1.TabIndex = 0
-        '
-        'BookStoreDataSet
-        '
-        Me.BookStoreDataSet.DataSetName = "BookStoreDataSet"
-        Me.BookStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TitlesBindingSource
-        '
-        Me.TitlesBindingSource.DataMember = "titles"
-        Me.TitlesBindingSource.DataSource = Me.BookStoreDataSet
-        '
-        'TitlesTableAdapter
-        '
-        Me.TitlesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.authorsTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.discountsTableAdapter = Nothing
-        Me.TableAdapterManager.employeeTableAdapter = Nothing
-        Me.TableAdapterManager.jobsTableAdapter = Nothing
-        Me.TableAdapterManager.pub_infoTableAdapter = Nothing
-        Me.TableAdapterManager.publishersTableAdapter = Nothing
-        Me.TableAdapterManager.royschedTableAdapter = Nothing
-        Me.TableAdapterManager.salesTableAdapter = Nothing
-        Me.TableAdapterManager.storesTableAdapter = Nothing
-        Me.TableAdapterManager.titleauthorTableAdapter = Nothing
-        Me.TableAdapterManager.titlesTableAdapter = Me.TitlesTableAdapter
-        Me.TableAdapterManager.UpdateOrder = BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'TitlesBindingNavigator
-        '
-        Me.TitlesBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.TitlesBindingNavigator.BindingSource = Me.TitlesBindingSource
-        Me.TitlesBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.TitlesBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.TitlesBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.TitlesBindingNavigatorSaveItem})
-        Me.TitlesBindingNavigator.Location = New System.Drawing.Point(0, 0)
-        Me.TitlesBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.TitlesBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.TitlesBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.TitlesBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.TitlesBindingNavigator.Name = "TitlesBindingNavigator"
-        Me.TitlesBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.TitlesBindingNavigator.Size = New System.Drawing.Size(885, 25)
-        Me.TitlesBindingNavigator.TabIndex = 1
-        Me.TitlesBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
-        '
-        'BindingNavigatorSeparator
-        '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveNextItem.Text = "Move next"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveLastItem.Text = "Move last"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
-        '
-        'TitlesBindingNavigatorSaveItem
-        '
-        Me.TitlesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.TitlesBindingNavigatorSaveItem.Image = CType(resources.GetObject("TitlesBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.TitlesBindingNavigatorSaveItem.Name = "TitlesBindingNavigatorSaveItem"
-        Me.TitlesBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.TitlesBindingNavigatorSaveItem.Text = "Save Data"
+        Me.lstCart.FormattingEnabled = True
+        Me.lstCart.Location = New System.Drawing.Point(562, 68)
+        Me.lstCart.Name = "lstCart"
+        Me.lstCart.Size = New System.Drawing.Size(311, 225)
+        Me.lstCart.TabIndex = 0
         '
         'TitlesDataGridView
         '
@@ -233,7 +77,7 @@ Partial Class frmOrderScreen
         Me.TitlesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TitlesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10})
         Me.TitlesDataGridView.DataSource = Me.TitlesBindingSource
-        Me.TitlesDataGridView.Location = New System.Drawing.Point(25, 145)
+        Me.TitlesDataGridView.Location = New System.Drawing.Point(25, 68)
         Me.TitlesDataGridView.Name = "TitlesDataGridView"
         Me.TitlesDataGridView.Size = New System.Drawing.Size(303, 225)
         Me.TitlesDataGridView.TabIndex = 2
@@ -298,11 +142,21 @@ Partial Class frmOrderScreen
         Me.DataGridViewTextBoxColumn10.HeaderText = "pubdate"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         '
+        'TitlesBindingSource
+        '
+        Me.TitlesBindingSource.DataMember = "titles"
+        Me.TitlesBindingSource.DataSource = Me.BookStoreDataSet
+        '
+        'BookStoreDataSet
+        '
+        Me.BookStoreDataSet.DataSetName = "BookStoreDataSet"
+        Me.BookStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'lblCatalog
         '
         Me.lblCatalog.AutoSize = True
         Me.lblCatalog.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCatalog.Location = New System.Drawing.Point(12, 109)
+        Me.lblCatalog.Location = New System.Drawing.Point(12, 32)
         Me.lblCatalog.Name = "lblCatalog"
         Me.lblCatalog.Size = New System.Drawing.Size(332, 31)
         Me.lblCatalog.TabIndex = 3
@@ -353,7 +207,7 @@ Partial Class frmOrderScreen
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(626, 111)
+        Me.Label3.Location = New System.Drawing.Point(626, 34)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(172, 31)
         Me.Label3.TabIndex = 9
@@ -441,11 +295,50 @@ Partial Class frmOrderScreen
         Me.TextBox6.Size = New System.Drawing.Size(128, 20)
         Me.TextBox6.TabIndex = 19
         '
+        'TitlesTableAdapter
+        '
+        Me.TitlesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.authorsTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.discountsTableAdapter = Nothing
+        Me.TableAdapterManager.employeeTableAdapter = Nothing
+        Me.TableAdapterManager.jobsTableAdapter = Nothing
+        Me.TableAdapterManager.pub_infoTableAdapter = Nothing
+        Me.TableAdapterManager.publishersTableAdapter = Nothing
+        Me.TableAdapterManager.royschedTableAdapter = Nothing
+        Me.TableAdapterManager.salesTableAdapter = Nothing
+        Me.TableAdapterManager.storesTableAdapter = Nothing
+        Me.TableAdapterManager.titleauthorTableAdapter = Nothing
+        Me.TableAdapterManager.titlesTableAdapter = Me.TitlesTableAdapter
+        Me.TableAdapterManager.UpdateOrder = BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'cmbStore
+        '
+        Me.cmbStore.FormattingEnabled = True
+        Me.cmbStore.Location = New System.Drawing.Point(84, 348)
+        Me.cmbStore.Name = "cmbStore"
+        Me.cmbStore.Size = New System.Drawing.Size(140, 21)
+        Me.cmbStore.TabIndex = 20
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(11, 351)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(66, 13)
+        Me.Label8.TabIndex = 21
+        Me.Label8.Text = "Store Name:"
+        '
         'frmOrderScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(885, 546)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.cmbStore)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox4)
@@ -464,39 +357,22 @@ Partial Class frmOrderScreen
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblCatalog)
         Me.Controls.Add(Me.TitlesDataGridView)
-        Me.Controls.Add(Me.TitlesBindingNavigator)
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.lstCart)
         Me.Name = "frmOrderScreen"
         Me.Text = "Ordering Form"
-        CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TitlesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TitlesBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TitlesBindingNavigator.ResumeLayout(False)
-        Me.TitlesBindingNavigator.PerformLayout()
         CType(Me.TitlesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TitlesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents lstCart As ListBox
     Friend WithEvents BookStoreDataSet As BookStoreDataSet
     Friend WithEvents TitlesBindingSource As BindingSource
     Friend WithEvents TitlesTableAdapter As BookStoreDataSetTableAdapters.titlesTableAdapter
     Friend WithEvents TableAdapterManager As BookStoreDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents TitlesBindingNavigator As BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents TitlesBindingNavigatorSaveItem As ToolStripButton
     Friend WithEvents TitlesDataGridView As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
@@ -525,4 +401,6 @@ Partial Class frmOrderScreen
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents cmbStore As ComboBox
+    Friend WithEvents Label8 As Label
 End Class

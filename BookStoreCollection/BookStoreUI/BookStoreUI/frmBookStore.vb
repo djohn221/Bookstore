@@ -12,4 +12,7 @@
         frmAuthors.ShowDialog()
     End Sub
 
+    Private Sub OrderSummaryTestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrderSummaryTestToolStripMenuItem.Click
+        frmSummaryScreen.ShowDialog()
+    End Sub
 End Class

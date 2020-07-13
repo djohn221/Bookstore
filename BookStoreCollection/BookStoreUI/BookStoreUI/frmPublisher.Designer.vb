@@ -144,6 +144,7 @@ Partial Class frmPublisher
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(38, 23)
         Me.BindingNavigatorPositionItem.Text = "0"
@@ -208,7 +209,7 @@ Partial Class frmPublisher
         'txtPublisher
         '
         Me.txtPublisher.Location = New System.Drawing.Point(88, 318)
-        Me.txtPublisher.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPublisher.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPublisher.MaxLength = 40
         Me.txtPublisher.Name = "txtPublisher"
         Me.txtPublisher.Size = New System.Drawing.Size(140, 20)
@@ -227,7 +228,7 @@ Partial Class frmPublisher
         'btnEnter
         '
         Me.btnEnter.Location = New System.Drawing.Point(239, 315)
-        Me.btnEnter.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEnter.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEnter.Name = "btnEnter"
         Me.btnEnter.Size = New System.Drawing.Size(56, 19)
         Me.btnEnter.TabIndex = 5
@@ -250,7 +251,7 @@ Partial Class frmPublisher
         Me.EmployeeDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13})
         Me.EmployeeDataGridView.DataSource = Me.EmployeeBindingSource
         Me.EmployeeDataGridView.Location = New System.Drawing.Point(9, 43)
-        Me.EmployeeDataGridView.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EmployeeDataGridView.Margin = New System.Windows.Forms.Padding(2)
         Me.EmployeeDataGridView.Name = "EmployeeDataGridView"
         Me.EmployeeDataGridView.RowTemplate.Height = 24
         Me.EmployeeDataGridView.Size = New System.Drawing.Size(574, 179)
@@ -314,7 +315,7 @@ Partial Class frmPublisher
         Me.Controls.Add(Me.lblPublishers)
         Me.Controls.Add(Me.btnEnter)
         Me.Controls.Add(Me.PublishersBindingNavigator)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmPublisher"
         Me.Text = "Publishers"
         CType(Me.PublishersBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
