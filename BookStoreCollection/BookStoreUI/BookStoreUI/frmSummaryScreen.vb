@@ -9,6 +9,7 @@
         lstCartItems.Items.Add(frmOrderScreen.lstCart.Items)
         storeName = frmOrderScreen.cboStoreName.SelectedItem
         subtotal = frmOrderScreen.SubTotal
+        orderNumber = OrderFunctions.genOrderNumber()
 
     End Sub
 
