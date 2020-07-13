@@ -88,6 +88,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include=".Designer.vb">
+      <DependentUpon>frmSummaryScreen.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Book.vb" />
     <Compile Include="BookStoreDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -117,6 +121,9 @@
       <DependentUpon>frmPublisher.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPublisher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSummaryScreen.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTitles.Designer.vb">
@@ -153,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPublisher.resx">
       <DependentUpon>frmPublisher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSummaryScreen.resx">
+      <DependentUpon>frmSummaryScreen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTitles.resx">
       <DependentUpon>frmTitles.vb</DependentUpon>
