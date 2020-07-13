@@ -98,6 +98,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BookStoreDataSet.vb">
+      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmOrderScreen.Designer.vb">
       <DependentUpon>frmOrderScreen.vb</DependentUpon>
     </Compile>

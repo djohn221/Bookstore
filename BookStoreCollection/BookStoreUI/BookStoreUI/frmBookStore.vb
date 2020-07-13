@@ -15,4 +15,9 @@
     Private Sub OrderSummaryTestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrderSummaryTestToolStripMenuItem.Click
         frmSummaryScreen.ShowDialog()
     End Sub
+
+    Private Sub TestFormToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestFormToolStripMenuItem.Click
+        'DELETE
+        frmSummaryScreen.Show()
+    End Sub
 End Class

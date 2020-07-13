@@ -28,21 +28,22 @@ Partial Class frmSummaryScreen
         Me.lblTaxText = New System.Windows.Forms.Label()
         Me.lstCartItems = New System.Windows.Forms.ListBox()
         Me.grpOrderDetails = New System.Windows.Forms.GroupBox()
+        Me.lblTax = New System.Windows.Forms.Label()
+        Me.lblSubTotal = New System.Windows.Forms.Label()
+        Me.lblGrandTotal = New System.Windows.Forms.Label()
+        Me.lblOrderNumber = New System.Windows.Forms.Label()
+        Me.lblStoreName = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnConfirm = New System.Windows.Forms.Button()
         Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
         Me.SalesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SalesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.salesTableAdapter()
         Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnConfirm = New System.Windows.Forms.Button()
-        Me.lblStoreName = New System.Windows.Forms.Label()
-        Me.lblOrderNumber = New System.Windows.Forms.Label()
-        Me.lblGrandTotal = New System.Windows.Forms.Label()
-        Me.lblSubTotal = New System.Windows.Forms.Label()
-        Me.lblTax = New System.Windows.Forms.Label()
+        Me.btnReturn = New System.Windows.Forms.Button()
         Me.grpOrderDetails.SuspendLayout()
         CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SalesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,6 +103,46 @@ Partial Class frmSummaryScreen
         Me.grpOrderDetails.TabStop = False
         Me.grpOrderDetails.Text = "Order Details"
         '
+        'lblTax
+        '
+        Me.lblTax.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTax.Location = New System.Drawing.Point(116, 102)
+        Me.lblTax.Name = "lblTax"
+        Me.lblTax.Size = New System.Drawing.Size(119, 19)
+        Me.lblTax.TabIndex = 9
+        '
+        'lblSubTotal
+        '
+        Me.lblSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblSubTotal.Location = New System.Drawing.Point(116, 76)
+        Me.lblSubTotal.Name = "lblSubTotal"
+        Me.lblSubTotal.Size = New System.Drawing.Size(119, 19)
+        Me.lblSubTotal.TabIndex = 8
+        '
+        'lblGrandTotal
+        '
+        Me.lblGrandTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblGrandTotal.Location = New System.Drawing.Point(116, 128)
+        Me.lblGrandTotal.Name = "lblGrandTotal"
+        Me.lblGrandTotal.Size = New System.Drawing.Size(119, 19)
+        Me.lblGrandTotal.TabIndex = 7
+        '
+        'lblOrderNumber
+        '
+        Me.lblOrderNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblOrderNumber.Location = New System.Drawing.Point(116, 50)
+        Me.lblOrderNumber.Name = "lblOrderNumber"
+        Me.lblOrderNumber.Size = New System.Drawing.Size(119, 19)
+        Me.lblOrderNumber.TabIndex = 6
+        '
+        'lblStoreName
+        '
+        Me.lblStoreName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblStoreName.Location = New System.Drawing.Point(117, 24)
+        Me.lblStoreName.Name = "lblStoreName"
+        Me.lblStoreName.Size = New System.Drawing.Size(119, 19)
+        Me.lblStoreName.TabIndex = 5
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -129,6 +170,34 @@ Partial Class frmSummaryScreen
         Me.Label5.Size = New System.Drawing.Size(205, 31)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Order Summary"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Pay In Advance", "Payment seven days after invoice date", "Payment ten days after invoice date", "Payment 30 days after invoice date", "Payment 60 days after invoice date", "Payment 90 days after invoice date"})
+        Me.ComboBox1.Location = New System.Drawing.Point(152, 432)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(185, 21)
+        Me.ComboBox1.TabIndex = 7
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(86, 435)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(60, 13)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "Pay Terms:"
+        '
+        'btnConfirm
+        '
+        Me.btnConfirm.Location = New System.Drawing.Point(237, 500)
+        Me.btnConfirm.Name = "btnConfirm"
+        Me.btnConfirm.Size = New System.Drawing.Size(100, 35)
+        Me.btnConfirm.TabIndex = 9
+        Me.btnConfirm.Text = "Confirm"
+        Me.btnConfirm.UseVisualStyleBackColor = True
         '
         'BookStoreDataSet
         '
@@ -160,79 +229,21 @@ Partial Class frmSummaryScreen
         Me.TableAdapterManager.titlesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'ComboBox1
+        'btnReturn
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Pay In Advance", "Payment seven days after invoice date", "Payment ten days after invoice date", "Payment 30 days after invoice date", "Payment 60 days after invoice date", "Payment 90 days after invoice date"})
-        Me.ComboBox1.Location = New System.Drawing.Point(152, 432)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(185, 21)
-        Me.ComboBox1.TabIndex = 7
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(86, 435)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(60, 13)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Pay Terms:"
-        '
-        'btnConfirm
-        '
-        Me.btnConfirm.Location = New System.Drawing.Point(237, 500)
-        Me.btnConfirm.Name = "btnConfirm"
-        Me.btnConfirm.Size = New System.Drawing.Size(100, 35)
-        Me.btnConfirm.TabIndex = 9
-        Me.btnConfirm.Text = "Confirm"
-        Me.btnConfirm.UseVisualStyleBackColor = True
-        '
-        'lblStoreName
-        '
-        Me.lblStoreName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblStoreName.Location = New System.Drawing.Point(117, 24)
-        Me.lblStoreName.Name = "lblStoreName"
-        Me.lblStoreName.Size = New System.Drawing.Size(119, 19)
-        Me.lblStoreName.TabIndex = 5
-        '
-        'lblOrderNumber
-        '
-        Me.lblOrderNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblOrderNumber.Location = New System.Drawing.Point(116, 50)
-        Me.lblOrderNumber.Name = "lblOrderNumber"
-        Me.lblOrderNumber.Size = New System.Drawing.Size(119, 19)
-        Me.lblOrderNumber.TabIndex = 6
-        '
-        'lblGrandTotal
-        '
-        Me.lblGrandTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblGrandTotal.Location = New System.Drawing.Point(116, 128)
-        Me.lblGrandTotal.Name = "lblGrandTotal"
-        Me.lblGrandTotal.Size = New System.Drawing.Size(119, 19)
-        Me.lblGrandTotal.TabIndex = 7
-        '
-        'lblSubTotal
-        '
-        Me.lblSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblSubTotal.Location = New System.Drawing.Point(116, 76)
-        Me.lblSubTotal.Name = "lblSubTotal"
-        Me.lblSubTotal.Size = New System.Drawing.Size(119, 19)
-        Me.lblSubTotal.TabIndex = 8
-        '
-        'lblTax
-        '
-        Me.lblTax.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTax.Location = New System.Drawing.Point(116, 102)
-        Me.lblTax.Name = "lblTax"
-        Me.lblTax.Size = New System.Drawing.Size(119, 19)
-        Me.lblTax.TabIndex = 9
+        Me.btnReturn.Location = New System.Drawing.Point(89, 500)
+        Me.btnReturn.Name = "btnReturn"
+        Me.btnReturn.Size = New System.Drawing.Size(90, 35)
+        Me.btnReturn.TabIndex = 10
+        Me.btnReturn.Text = "Return to Order Screen"
+        Me.btnReturn.UseVisualStyleBackColor = True
         '
         'frmSummaryScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(411, 567)
+        Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.btnConfirm)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ComboBox1)
@@ -270,4 +281,5 @@ Partial Class frmSummaryScreen
     Friend WithEvents lblGrandTotal As Label
     Friend WithEvents lblOrderNumber As Label
     Friend WithEvents lblStoreName As Label
+    Friend WithEvents btnReturn As Button
 End Class

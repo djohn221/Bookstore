@@ -25,13 +25,14 @@ Partial Class frmBookStore
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OrderSummaryTestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TitlesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AuthorsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PublishersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lstShoppingCart = New System.Windows.Forms.ListBox()
-        Me.OrderSummaryTestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TestFormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,10 +55,16 @@ Partial Class frmBookStore
         '
         'OrderToolStripMenuItem
         '
-        Me.OrderToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrderSummaryTestToolStripMenuItem})
+        Me.OrderToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrderSummaryTestToolStripMenuItem, Me.TestFormToolStripMenuItem})
         Me.OrderToolStripMenuItem.Name = "OrderToolStripMenuItem"
         Me.OrderToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
         Me.OrderToolStripMenuItem.Text = "Order"
+        '
+        'OrderSummaryTestToolStripMenuItem
+        '
+        Me.OrderSummaryTestToolStripMenuItem.Name = "OrderSummaryTestToolStripMenuItem"
+        Me.OrderSummaryTestToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.OrderSummaryTestToolStripMenuItem.Text = "Order Summary Test"
         '
         'MaintenanceToolStripMenuItem
         '
@@ -94,16 +101,16 @@ Partial Class frmBookStore
         '
         Me.lstShoppingCart.FormattingEnabled = True
         Me.lstShoppingCart.Location = New System.Drawing.Point(302, 41)
-        Me.lstShoppingCart.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lstShoppingCart.Margin = New System.Windows.Forms.Padding(2)
         Me.lstShoppingCart.Name = "lstShoppingCart"
         Me.lstShoppingCart.Size = New System.Drawing.Size(278, 225)
         Me.lstShoppingCart.TabIndex = 1
         '
-        'OrderSummaryTestToolStripMenuItem
+        'TestFormToolStripMenuItem
         '
-        Me.OrderSummaryTestToolStripMenuItem.Name = "OrderSummaryTestToolStripMenuItem"
-        Me.OrderSummaryTestToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-        Me.OrderSummaryTestToolStripMenuItem.Text = "Order Summary Test"
+        Me.TestFormToolStripMenuItem.Name = "TestFormToolStripMenuItem"
+        Me.TestFormToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.TestFormToolStripMenuItem.Text = "test form"
         '
         'frmBookStore
         '
@@ -113,7 +120,7 @@ Partial Class frmBookStore
         Me.Controls.Add(Me.lstShoppingCart)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmBookStore"
         Me.Text = "Book Store"
         Me.MenuStrip1.ResumeLayout(False)
@@ -133,4 +140,5 @@ Partial Class frmBookStore
     Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lstShoppingCart As ListBox
     Friend WithEvents OrderSummaryTestToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TestFormToolStripMenuItem As ToolStripMenuItem
 End Class
