@@ -1,4 +1,11 @@
-﻿Public Class frmBookStore
+﻿'Affirmation of Authorship:
+
+'Name: Darwin Chavez, David Johnson
+
+'Date: 7/13/2020
+
+'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
+Public Class frmBookStore
 
     Private Sub TitlesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TitlesToolStripMenuItem.Click
         frmTitles.ShowDialog()
@@ -17,11 +24,15 @@
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        MessageBox.Show("Applications Name: Online Book Store" & vbNewLine & "Version: 1.0")
+        MessageBox.Show("Applications Name: Online Book Store" & vbNewLine & "Version: .5 Beta")
     End Sub
 
-    Private Sub TestFormToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestFormToolStripMenuItem.Click
-        'DELETE
-        frmSummaryScreen.Show()
+    Private Sub frmBookStore_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
+        Me.Close()
+
     End Sub
 End Class

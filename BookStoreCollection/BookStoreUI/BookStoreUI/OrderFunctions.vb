@@ -1,5 +1,11 @@
 ﻿Imports System.Data.SqlClient
+'Affirmation of Authorship:
 
+'Name: Darwin Chavez, David Johnson
+
+'Date: 7/13/2020
+
+'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
 Module OrderFunctions
 
 

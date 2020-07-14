@@ -33,6 +33,7 @@ Partial Class frmBookStore
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,6 +50,7 @@ Partial Class frmBookStore
         '
         'FileToolStripMenuItem
         '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
         Me.FileToolStripMenuItem.Text = "File"
@@ -63,7 +65,7 @@ Partial Class frmBookStore
         'OrderSummaryTestToolStripMenuItem
         '
         Me.OrderSummaryTestToolStripMenuItem.Name = "OrderSummaryTestToolStripMenuItem"
-        Me.OrderSummaryTestToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.OrderSummaryTestToolStripMenuItem.Size = New System.Drawing.Size(161, 26)
         Me.OrderSummaryTestToolStripMenuItem.Text = "Place Order"
         '
         'MaintenanceToolStripMenuItem
@@ -76,19 +78,19 @@ Partial Class frmBookStore
         'TitlesToolStripMenuItem
         '
         Me.TitlesToolStripMenuItem.Name = "TitlesToolStripMenuItem"
-        Me.TitlesToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.TitlesToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
         Me.TitlesToolStripMenuItem.Text = "Titles"
         '
         'AuthorsToolStripMenuItem
         '
         Me.AuthorsToolStripMenuItem.Name = "AuthorsToolStripMenuItem"
-        Me.AuthorsToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.AuthorsToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
         Me.AuthorsToolStripMenuItem.Text = "Authors"
         '
         'PublishersToolStripMenuItem
         '
         Me.PublishersToolStripMenuItem.Name = "PublishersToolStripMenuItem"
-        Me.PublishersToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.PublishersToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
         Me.PublishersToolStripMenuItem.Text = "Publishers"
         '
         'ReportToolStripMenuItem
@@ -107,8 +109,14 @@ Partial Class frmBookStore
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(125, 26)
         Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'CloseToolStripMenuItem
+        '
+        Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.CloseToolStripMenuItem.Text = "Close"
         '
         'frmBookStore
         '
@@ -138,4 +146,5 @@ Partial Class frmBookStore
     Friend WithEvents OrderSummaryTestToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
 End Class

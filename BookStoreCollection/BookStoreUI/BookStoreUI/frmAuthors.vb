@@ -1,4 +1,11 @@
-﻿Public Class frmAuthors
+﻿'Affirmation of Authorship:
+
+'Name: Darwin Chavez, David Johnson
+
+'Date: 7/13/2020
+
+'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
+Public Class frmAuthors
     Private Sub AuthorsBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles AuthorsBindingNavigatorSaveItem.Click
         Me.Validate()
         Me.AuthorsBindingSource.EndEdit()
