@@ -1,6 +1,7 @@
 ﻿Public Class frmOrderScreen
     Public SubTotal As Double = 0.00
     Public storeName As String = ""
+    Public grandTotal As Double = 0.00
 
 
     Private Sub TitlesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
