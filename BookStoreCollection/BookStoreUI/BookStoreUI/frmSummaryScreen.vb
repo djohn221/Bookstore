@@ -17,7 +17,7 @@
 
         lstCartItems.Items.Clear()
         lstCartItems.Items.Add(frmOrderScreen.lstCart.Items)
-        storeName = frmOrderScreen.cmbStore.SelectedItem
+        storeName = frmOrderScreen.cboStoreName.SelectedItem
         subtotal = frmOrderScreen.SubTotal
         orderNumber = OrderFunctions.genOrderNumber()
         tax = OrderFunctions.getTax()

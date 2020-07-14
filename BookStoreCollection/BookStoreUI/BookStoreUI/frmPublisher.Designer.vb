@@ -26,8 +26,6 @@ Partial Class frmPublisher
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPublisher))
         Me.PublishersBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.PublishersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
@@ -39,28 +37,24 @@ Partial Class frmPublisher
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.PublishersBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.btnPublisherName = New System.Windows.Forms.Button()
+        Me.PublishersDataGridView = New System.Windows.Forms.DataGridView()
+        Me.txtPublisherName = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PublishersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
         Me.PublishersTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.publishersTableAdapter()
         Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
-        Me.txtPublisher = New System.Windows.Forms.TextBox()
-        Me.lblPublishers = New System.Windows.Forms.Label()
-        Me.btnEnter = New System.Windows.Forms.Button()
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EmployeeTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.employeeTableAdapter()
-        Me.EmployeeDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PublishersBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PublishersBindingNavigator.SuspendLayout()
+        CType(Me.PublishersDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PublishersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmployeeDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PublishersBindingNavigator
@@ -78,7 +72,7 @@ Partial Class frmPublisher
         Me.PublishersBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.PublishersBindingNavigator.Name = "PublishersBindingNavigator"
         Me.PublishersBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.PublishersBindingNavigator.Size = New System.Drawing.Size(701, 27)
+        Me.PublishersBindingNavigator.Size = New System.Drawing.Size(683, 27)
         Me.PublishersBindingNavigator.TabIndex = 0
         Me.PublishersBindingNavigator.Text = "BindingNavigator1"
         '
@@ -91,20 +85,10 @@ Partial Class frmPublisher
         Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(24, 24)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
         '
-        'PublishersBindingSource
-        '
-        Me.PublishersBindingSource.DataMember = "publishers"
-        Me.PublishersBindingSource.DataSource = Me.BookStoreDataSet
-        '
-        'BookStoreDataSet
-        '
-        Me.BookStoreDataSet.DataSetName = "BookStoreDataSet"
-        Me.BookStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 24)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -144,9 +128,8 @@ Partial Class frmPublisher
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(38, 23)
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(49, 27)
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
@@ -186,6 +169,86 @@ Partial Class frmPublisher
         Me.PublishersBindingNavigatorSaveItem.Size = New System.Drawing.Size(24, 24)
         Me.PublishersBindingNavigatorSaveItem.Text = "Save Data"
         '
+        'btnPublisherName
+        '
+        Me.btnPublisherName.Location = New System.Drawing.Point(330, 340)
+        Me.btnPublisherName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnPublisherName.Name = "btnPublisherName"
+        Me.btnPublisherName.Size = New System.Drawing.Size(172, 39)
+        Me.btnPublisherName.TabIndex = 5
+        Me.btnPublisherName.Text = "Search Publisher Name"
+        Me.btnPublisherName.UseVisualStyleBackColor = True
+        '
+        'PublishersDataGridView
+        '
+        Me.PublishersDataGridView.AutoGenerateColumns = False
+        Me.PublishersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.PublishersDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
+        Me.PublishersDataGridView.DataSource = Me.PublishersBindingSource
+        Me.PublishersDataGridView.Location = New System.Drawing.Point(11, 44)
+        Me.PublishersDataGridView.Name = "PublishersDataGridView"
+        Me.PublishersDataGridView.RowTemplate.Height = 24
+        Me.PublishersDataGridView.Size = New System.Drawing.Size(550, 220)
+        Me.PublishersDataGridView.TabIndex = 7
+        '
+        'txtPublisherName
+        '
+        Me.txtPublisherName.Location = New System.Drawing.Point(126, 348)
+        Me.txtPublisherName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtPublisherName.MaxLength = 40
+        Me.txtPublisherName.Name = "txtPublisherName"
+        Me.txtPublisherName.Size = New System.Drawing.Size(185, 22)
+        Me.txtPublisherName.TabIndex = 9
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(8, 353)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(112, 17)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "Publisher Name:"
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "pub_id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "pub_id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "pub_name"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "pub_name"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "city"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "city"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "state"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "state"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "country"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "country"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'PublishersBindingSource
+        '
+        Me.PublishersBindingSource.DataMember = "publishers"
+        Me.PublishersBindingSource.DataSource = Me.BookStoreDataSet
+        '
+        'BookStoreDataSet
+        '
+        Me.BookStoreDataSet.DataSetName = "BookStoreDataSet"
+        Me.BookStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'PublishersTableAdapter
         '
         Me.PublishersTableAdapter.ClearBeforeFill = True
@@ -206,125 +269,25 @@ Partial Class frmPublisher
         Me.TableAdapterManager.titlesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'txtPublisher
-        '
-        Me.txtPublisher.Location = New System.Drawing.Point(88, 318)
-        Me.txtPublisher.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtPublisher.MaxLength = 40
-        Me.txtPublisher.Name = "txtPublisher"
-        Me.txtPublisher.Size = New System.Drawing.Size(140, 20)
-        Me.txtPublisher.TabIndex = 7
-        '
-        'lblPublishers
-        '
-        Me.lblPublishers.AutoSize = True
-        Me.lblPublishers.Location = New System.Drawing.Point(34, 320)
-        Me.lblPublishers.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblPublishers.Name = "lblPublishers"
-        Me.lblPublishers.Size = New System.Drawing.Size(53, 13)
-        Me.lblPublishers.TabIndex = 6
-        Me.lblPublishers.Text = "Publisher:"
-        '
-        'btnEnter
-        '
-        Me.btnEnter.Location = New System.Drawing.Point(239, 315)
-        Me.btnEnter.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnEnter.Name = "btnEnter"
-        Me.btnEnter.Size = New System.Drawing.Size(56, 19)
-        Me.btnEnter.TabIndex = 5
-        Me.btnEnter.Text = "Enter"
-        Me.btnEnter.UseVisualStyleBackColor = True
-        '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "employee"
-        Me.EmployeeBindingSource.DataSource = Me.BookStoreDataSet
-        '
-        'EmployeeTableAdapter
-        '
-        Me.EmployeeTableAdapter.ClearBeforeFill = True
-        '
-        'EmployeeDataGridView
-        '
-        Me.EmployeeDataGridView.AutoGenerateColumns = False
-        Me.EmployeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.EmployeeDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13})
-        Me.EmployeeDataGridView.DataSource = Me.EmployeeBindingSource
-        Me.EmployeeDataGridView.Location = New System.Drawing.Point(9, 43)
-        Me.EmployeeDataGridView.Margin = New System.Windows.Forms.Padding(2)
-        Me.EmployeeDataGridView.Name = "EmployeeDataGridView"
-        Me.EmployeeDataGridView.RowTemplate.Height = 24
-        Me.EmployeeDataGridView.Size = New System.Drawing.Size(574, 179)
-        Me.EmployeeDataGridView.TabIndex = 7
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "emp_id"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "emp_id"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "fname"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "fname"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "minit"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "minit"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "lname"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "lname"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "job_id"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "job_id"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "job_lvl"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "job_lvl"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "pub_id"
-        Me.DataGridViewTextBoxColumn12.HeaderText = "pub_id"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.DataPropertyName = "hire_date"
-        Me.DataGridViewTextBoxColumn13.HeaderText = "hire_date"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        '
         'frmPublisher
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(701, 370)
-        Me.Controls.Add(Me.EmployeeDataGridView)
-        Me.Controls.Add(Me.txtPublisher)
-        Me.Controls.Add(Me.lblPublishers)
-        Me.Controls.Add(Me.btnEnter)
+        Me.ClientSize = New System.Drawing.Size(683, 402)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txtPublisherName)
+        Me.Controls.Add(Me.PublishersDataGridView)
+        Me.Controls.Add(Me.btnPublisherName)
         Me.Controls.Add(Me.PublishersBindingNavigator)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmPublisher"
         Me.Text = "Publishers"
         CType(Me.PublishersBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PublishersBindingNavigator.ResumeLayout(False)
         Me.PublishersBindingNavigator.PerformLayout()
+        CType(Me.PublishersDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PublishersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmployeeDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -347,18 +310,13 @@ Partial Class frmPublisher
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents PublishersBindingNavigatorSaveItem As ToolStripButton
-    Friend WithEvents txtPublisher As TextBox
-    Friend WithEvents lblPublishers As Label
-    Friend WithEvents btnEnter As Button
-    Friend WithEvents EmployeeBindingSource As BindingSource
-    Friend WithEvents EmployeeTableAdapter As BookStoreDataSetTableAdapters.employeeTableAdapter
-    Friend WithEvents EmployeeDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
+    Friend WithEvents btnPublisherName As Button
+    Friend WithEvents PublishersDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents txtPublisherName As TextBox
+    Friend WithEvents Label2 As Label
 End Class
