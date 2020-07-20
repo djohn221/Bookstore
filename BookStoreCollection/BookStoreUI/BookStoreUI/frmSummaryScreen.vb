@@ -48,7 +48,6 @@ Public Class frmSummaryScreen
                 Exit Sub
         End Select
 
-
         'Will send Information to database in phase 3
         'More specifically to the sales data base
 

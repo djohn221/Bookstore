@@ -28,51 +28,50 @@ Partial Class frmLoginScreen
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.btnEnter = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnCreate = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblEmployeeLogin
         '
         Me.lblEmployeeLogin.AutoSize = True
-        Me.lblEmployeeLogin.Location = New System.Drawing.Point(26, 76)
-        Me.lblEmployeeLogin.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblEmployeeLogin.Location = New System.Drawing.Point(35, 94)
         Me.lblEmployeeLogin.Name = "lblEmployeeLogin"
-        Me.lblEmployeeLogin.Size = New System.Drawing.Size(46, 13)
+        Me.lblEmployeeLogin.Size = New System.Drawing.Size(59, 17)
         Me.lblEmployeeLogin.TabIndex = 0
         Me.lblEmployeeLogin.Text = "User ID:"
         '
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(15, 114)
-        Me.lblPassword.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblPassword.Location = New System.Drawing.Point(20, 140)
         Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(56, 13)
+        Me.lblPassword.Size = New System.Drawing.Size(73, 17)
         Me.lblPassword.TabIndex = 1
         Me.lblPassword.Text = "Password:"
         '
         'txtUserID
         '
-        Me.txtUserID.Location = New System.Drawing.Point(74, 76)
-        Me.txtUserID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtUserID.Location = New System.Drawing.Point(99, 94)
+        Me.txtUserID.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtUserID.MaxLength = 9
         Me.txtUserID.Name = "txtUserID"
-        Me.txtUserID.Size = New System.Drawing.Size(104, 20)
+        Me.txtUserID.Size = New System.Drawing.Size(137, 22)
         Me.txtUserID.TabIndex = 2
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(74, 110)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPassword.Location = New System.Drawing.Point(99, 135)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(104, 20)
+        Me.txtPassword.Size = New System.Drawing.Size(137, 22)
         Me.txtPassword.TabIndex = 3
         '
         'btnEnter
         '
-        Me.btnEnter.Location = New System.Drawing.Point(122, 164)
-        Me.btnEnter.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEnter.Location = New System.Drawing.Point(163, 202)
+        Me.btnEnter.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnEnter.Name = "btnEnter"
-        Me.btnEnter.Size = New System.Drawing.Size(56, 19)
+        Me.btnEnter.Size = New System.Drawing.Size(75, 23)
         Me.btnEnter.TabIndex = 4
         Me.btnEnter.Text = "Enter"
         Me.btnEnter.UseVisualStyleBackColor = True
@@ -80,25 +79,35 @@ Partial Class frmLoginScreen
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(26, 38)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(35, 47)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 13)
+        Me.Label1.Size = New System.Drawing.Size(117, 17)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Book Store Login"
         '
+        'btnCreate
+        '
+        Me.btnCreate.Location = New System.Drawing.Point(38, 202)
+        Me.btnCreate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnCreate.Name = "btnCreate"
+        Me.btnCreate.Size = New System.Drawing.Size(75, 23)
+        Me.btnCreate.TabIndex = 6
+        Me.btnCreate.Text = "Create"
+        Me.btnCreate.UseVisualStyleBackColor = True
+        '
         'frmLoginScreen
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(201, 202)
+        Me.ClientSize = New System.Drawing.Size(268, 249)
+        Me.Controls.Add(Me.btnCreate)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnEnter)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtUserID)
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.lblEmployeeLogin)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmLoginScreen"
         Me.Text = "Login"
         Me.ResumeLayout(False)
@@ -112,4 +121,5 @@ Partial Class frmLoginScreen
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents btnEnter As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnCreate As Button
 End Class

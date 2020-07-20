@@ -5,7 +5,10 @@
 'Date: 7/13/2020
 
 'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
+Imports BookBO.BookBO
 Public Class frmTitles
+    'Creating a variable from a structure'
+    Private titleName As BookFeatures
     Private Sub TitlesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles TitlesBindingNavigatorSaveItem.Click
         Me.Validate()
         Me.TitlesBindingSource.EndEdit()
@@ -21,8 +24,10 @@ Public Class frmTitles
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Try
-
-            Me.TitlesTableAdapter.FillTitle(Me.BookStoreDataSet.titles, txtTitle.Text)
+            'Referencing a field within the structure'
+            titleName.strTitleName = txtTitle.Text
+            Me.TitlesTableAdapter.FillTitle(Me.BookStoreDataSet.titles, titleName.strTitleName)
+            'Clear TextBox Values After Search'
             txtTitle.Text = String.Empty
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Data Input Error")

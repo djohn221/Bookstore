@@ -27,20 +27,19 @@ Partial Class frmOrderScreen
         Me.TitlesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
         Me.lblCatalog = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblTitleName = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnAddToCart = New System.Windows.Forms.Button()
         Me.txtTitleName = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblSubtotal = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnCheckout = New System.Windows.Forms.Button()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txtTax = New System.Windows.Forms.TextBox()
+        Me.txtCartSubtotal = New System.Windows.Forms.TextBox()
         Me.TitlesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.titlesTableAdapter()
         Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
         Me.cboStoreName = New System.Windows.Forms.ComboBox()
@@ -58,9 +57,12 @@ Partial Class frmOrderScreen
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.mtbQuantity = New System.Windows.Forms.MaskedTextBox()
         Me.btnRemove = New System.Windows.Forms.Button()
+        Me.txtTitleID = New System.Windows.Forms.TextBox()
+        Me.lblTitleID = New System.Windows.Forms.Label()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
+        Me.lblPrice = New System.Windows.Forms.Label()
         CType(Me.TitlesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FKsalestitleid24927208BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,10 +73,10 @@ Partial Class frmOrderScreen
         '
         Me.lstCart.FormattingEnabled = True
         Me.lstCart.ItemHeight = 16
-        Me.lstCart.Location = New System.Drawing.Point(749, 84)
+        Me.lstCart.Location = New System.Drawing.Point(503, 100)
         Me.lstCart.Margin = New System.Windows.Forms.Padding(4)
         Me.lstCart.Name = "lstCart"
-        Me.lstCart.Size = New System.Drawing.Size(413, 276)
+        Me.lstCart.Size = New System.Drawing.Size(666, 276)
         Me.lstCart.TabIndex = 0
         '
         'TitlesBindingSource
@@ -98,39 +100,41 @@ Partial Class frmOrderScreen
         Me.lblCatalog.TabIndex = 3
         Me.lblCatalog.Text = "Choose From the Catalog:"
         '
-        'Label1
+        'lblTitleName
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(63, 476)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 17)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Title:"
+        Me.lblTitleName.AutoSize = True
+        Me.lblTitleName.Location = New System.Drawing.Point(63, 452)
+        Me.lblTitleName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTitleName.Name = "lblTitleName"
+        Me.lblTitleName.Size = New System.Drawing.Size(39, 17)
+        Me.lblTitleName.TabIndex = 4
+        Me.lblTitleName.Text = "Title:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(37, 523)
+        Me.Label2.Location = New System.Drawing.Point(37, 542)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(65, 17)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Quantity:"
         '
-        'Button1
+        'btnAddToCart
         '
-        Me.Button1.Location = New System.Drawing.Point(112, 601)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(171, 57)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Add to shopping list"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnAddToCart.Location = New System.Drawing.Point(112, 601)
+        Me.btnAddToCart.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAddToCart.Name = "btnAddToCart"
+        Me.btnAddToCart.Size = New System.Drawing.Size(171, 57)
+        Me.btnAddToCart.TabIndex = 6
+        Me.btnAddToCart.Text = "Add To Cart"
+        Me.btnAddToCart.UseVisualStyleBackColor = True
         '
         'txtTitleName
         '
-        Me.txtTitleName.Location = New System.Drawing.Point(112, 476)
+        Me.txtTitleName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TitlesBindingSource, "title", True))
+        Me.txtTitleName.Enabled = False
+        Me.txtTitleName.Location = New System.Drawing.Point(112, 452)
         Me.txtTitleName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTitleName.MaxLength = 80
         Me.txtTitleName.Name = "txtTitleName"
@@ -167,16 +171,6 @@ Partial Class frmOrderScreen
         Me.Label5.Size = New System.Drawing.Size(35, 17)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Tax:"
-        '
-        'lblSubtotal
-        '
-        Me.lblSubtotal.AutoSize = True
-        Me.lblSubtotal.Location = New System.Drawing.Point(41, 564)
-        Me.lblSubtotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblSubtotal.Name = "lblSubtotal"
-        Me.lblSubtotal.Size = New System.Drawing.Size(64, 17)
-        Me.lblSubtotal.TabIndex = 12
-        Me.lblSubtotal.Text = "Subtotal:"
         '
         'Label7
         '
@@ -217,23 +211,23 @@ Partial Class frmOrderScreen
         Me.TextBox4.Size = New System.Drawing.Size(169, 22)
         Me.TextBox4.TabIndex = 17
         '
-        'TextBox5
+        'txtTax
         '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(850, 523)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(169, 22)
-        Me.TextBox5.TabIndex = 18
+        Me.txtTax.Enabled = False
+        Me.txtTax.Location = New System.Drawing.Point(850, 523)
+        Me.txtTax.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTax.Name = "txtTax"
+        Me.txtTax.Size = New System.Drawing.Size(169, 22)
+        Me.txtTax.TabIndex = 18
         '
-        'TextBox6
+        'txtCartSubtotal
         '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(851, 487)
-        Me.TextBox6.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(169, 22)
-        Me.TextBox6.TabIndex = 19
+        Me.txtCartSubtotal.Enabled = False
+        Me.txtCartSubtotal.Location = New System.Drawing.Point(851, 487)
+        Me.txtCartSubtotal.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCartSubtotal.Name = "txtCartSubtotal"
+        Me.txtCartSubtotal.Size = New System.Drawing.Size(169, 22)
+        Me.txtCartSubtotal.TabIndex = 19
         '
         'TitlesTableAdapter
         '
@@ -260,7 +254,7 @@ Partial Class frmOrderScreen
         Me.cboStoreName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboStoreName.FormattingEnabled = True
         Me.cboStoreName.Items.AddRange(New Object() {"Eric the Read Books", "Barnum's", "News & Brews", "Doc-U-Mat: Quality Laundry and Books ", "Fricative Bookshop ", "Bookbeat"})
-        Me.cboStoreName.Location = New System.Drawing.Point(112, 428)
+        Me.cboStoreName.Location = New System.Drawing.Point(112, 420)
         Me.cboStoreName.Margin = New System.Windows.Forms.Padding(4)
         Me.cboStoreName.Name = "cboStoreName"
         Me.cboStoreName.Size = New System.Drawing.Size(185, 24)
@@ -274,7 +268,7 @@ Partial Class frmOrderScreen
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(15, 432)
+        Me.Label8.Location = New System.Drawing.Point(15, 424)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(87, 17)
@@ -294,7 +288,7 @@ Partial Class frmOrderScreen
         Me.TitlesDataGridView.Location = New System.Drawing.Point(32, 100)
         Me.TitlesDataGridView.Name = "TitlesDataGridView"
         Me.TitlesDataGridView.RowTemplate.Height = 24
-        Me.TitlesDataGridView.Size = New System.Drawing.Size(399, 267)
+        Me.TitlesDataGridView.Size = New System.Drawing.Size(399, 290)
         Me.TitlesDataGridView.TabIndex = 21
         '
         'DataGridViewTextBoxColumn1
@@ -357,58 +351,94 @@ Partial Class frmOrderScreen
         Me.DataGridViewTextBoxColumn10.HeaderText = "pubdate"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         '
-        'MaskedTextBox1
+        'mtbQuantity
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(112, 522)
-        Me.MaskedTextBox1.Mask = "00"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(185, 22)
-        Me.MaskedTextBox1.TabIndex = 22
-        Me.MaskedTextBox1.ValidatingType = GetType(Integer)
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(113, 564)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(184, 17)
-        Me.Label6.TabIndex = 23
-        Me.Label6.Text = "______________________"
+        Me.mtbQuantity.Location = New System.Drawing.Point(112, 541)
+        Me.mtbQuantity.Mask = "00"
+        Me.mtbQuantity.Name = "mtbQuantity"
+        Me.mtbQuantity.Size = New System.Drawing.Size(185, 22)
+        Me.mtbQuantity.TabIndex = 22
+        Me.mtbQuantity.ValidatingType = GetType(Integer)
         '
         'btnRemove
         '
-        Me.btnRemove.Location = New System.Drawing.Point(1051, 367)
+        Me.btnRemove.Enabled = False
+        Me.btnRemove.Location = New System.Drawing.Point(1058, 383)
         Me.btnRemove.Name = "btnRemove"
         Me.btnRemove.Size = New System.Drawing.Size(111, 23)
         Me.btnRemove.TabIndex = 24
         Me.btnRemove.Text = "Remove Item"
         Me.btnRemove.UseVisualStyleBackColor = True
         '
+        'txtTitleID
+        '
+        Me.txtTitleID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TitlesBindingSource, "title_id", True))
+        Me.txtTitleID.Enabled = False
+        Me.txtTitleID.Location = New System.Drawing.Point(112, 482)
+        Me.txtTitleID.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTitleID.MaxLength = 80
+        Me.txtTitleID.Name = "txtTitleID"
+        Me.txtTitleID.Size = New System.Drawing.Size(185, 22)
+        Me.txtTitleID.TabIndex = 26
+        '
+        'lblTitleID
+        '
+        Me.lblTitleID.AutoSize = True
+        Me.lblTitleID.Location = New System.Drawing.Point(46, 482)
+        Me.lblTitleID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTitleID.Name = "lblTitleID"
+        Me.lblTitleID.Size = New System.Drawing.Size(56, 17)
+        Me.lblTitleID.TabIndex = 25
+        Me.lblTitleID.Text = "Title ID:"
+        '
+        'txtPrice
+        '
+        Me.txtPrice.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TitlesBindingSource, "price", True))
+        Me.txtPrice.Enabled = False
+        Me.txtPrice.Location = New System.Drawing.Point(112, 512)
+        Me.txtPrice.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPrice.MaxLength = 80
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.Size = New System.Drawing.Size(185, 22)
+        Me.txtPrice.TabIndex = 28
+        '
+        'lblPrice
+        '
+        Me.lblPrice.AutoSize = True
+        Me.lblPrice.Location = New System.Drawing.Point(58, 512)
+        Me.lblPrice.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPrice.Name = "lblPrice"
+        Me.lblPrice.Size = New System.Drawing.Size(44, 17)
+        Me.lblPrice.TabIndex = 27
+        Me.lblPrice.Text = "Price:"
+        '
         'frmOrderScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1182, 678)
+        Me.Controls.Add(Me.txtPrice)
+        Me.Controls.Add(Me.lblPrice)
+        Me.Controls.Add(Me.txtTitleID)
+        Me.Controls.Add(Me.lblTitleID)
         Me.Controls.Add(Me.btnRemove)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.MaskedTextBox1)
+        Me.Controls.Add(Me.mtbQuantity)
         Me.Controls.Add(Me.TitlesDataGridView)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.cboStoreName)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.txtCartSubtotal)
+        Me.Controls.Add(Me.txtTax)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.btnCheckout)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.lblSubtotal)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtTitleName)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnAddToCart)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblTitleName)
         Me.Controls.Add(Me.lblCatalog)
         Me.Controls.Add(Me.lstCart)
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -429,20 +459,19 @@ Partial Class frmOrderScreen
     Friend WithEvents TitlesTableAdapter As BookStoreDataSetTableAdapters.titlesTableAdapter
     Friend WithEvents TableAdapterManager As BookStoreDataSetTableAdapters.TableAdapterManager
     Friend WithEvents lblCatalog As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblTitleName As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnAddToCart As Button
     Friend WithEvents txtTitleName As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents lblSubtotal As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnCheckout As Button
     Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents txtTax As TextBox
+    Friend WithEvents txtCartSubtotal As TextBox
     Friend WithEvents cboStoreName As ComboBox
     Friend WithEvents Label8 As Label
     Friend WithEvents FKsalestitleid24927208BindingSource As BindingSource
@@ -458,7 +487,10 @@ Partial Class frmOrderScreen
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents mtbQuantity As MaskedTextBox
     Friend WithEvents btnRemove As Button
+    Friend WithEvents txtTitleID As TextBox
+    Friend WithEvents lblTitleID As Label
+    Friend WithEvents txtPrice As TextBox
+    Friend WithEvents lblPrice As Label
 End Class

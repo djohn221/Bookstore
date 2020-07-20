@@ -5,7 +5,9 @@
 'Date: 7/13/2020
 
 'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
+Imports BookBO
 Public Class frmOrderScreen
+
     Public SubTotal As Double = 0.00
     Public storeName As String = ""
     Public grandTotal As Double = 0.00
@@ -19,15 +21,8 @@ Public Class frmOrderScreen
     End Sub
 
     Private Sub frmOrderScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ''TODO: This line of code loads data into the 'BookStoreDataSet.sales' table. You can move, or remove it, as needed.
-        'Me.SalesTableAdapter.Fill(Me.BookStoreDataSet.sales)
-        ''TODO: This line of code loads data into the 'BookStoreDataSet.sales' table. You can move, or remove it, as needed.
-        'Me.SalesTableAdapter.Fill(Me.BookStoreDataSet.sales)
         'TODO: This line of code loads data into the 'BookStoreDataSet.titles' table. You can move, or remove it, as needed.
         Me.TitlesTableAdapter.Fill(Me.BookStoreDataSet.titles)
-        btnRemove.Enabled = False
-        lstCart.Items.Add("Test")
-
     End Sub
 
 
@@ -47,6 +42,9 @@ Public Class frmOrderScreen
             Else
                 MessageBox.Show("Cart is empty")
             End If
+
+            'Add Logic Here That will update the cart subtotal, tax, finalTotal'
+
         Catch ex As Exception
             MessageBox.Show(ex, "Please select an item.")
         End Try
@@ -55,4 +53,24 @@ Public Class frmOrderScreen
     Private Sub lstCart_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstCart.SelectedIndexChanged
         btnRemove.Enabled = True
     End Sub
+
+    Private Sub btnAddToCart_Click(sender As Object, e As EventArgs) Handles btnAddToCart.Click
+
+        'When addToCart button is selected, it will add titleID, titleName, Price and Quantity.'
+
+        Do While mtbQuantity.Text = String.Empty
+            MessageBox.Show("Please Enter a Quantity Value.")
+        Loop
+
+        Dim intQ As Integer = CType(mtbQuantity.Text, Integer)
+        Dim dblPrice As Double = CType(txtPrice.Text, Double)
+        Dim aTransaction As New BookBO.BookBO(txtTitleID.Text, txtTitleName.Text, dblPrice, intQ)
+
+        'Add item into Cart using reference variable aTransaction from class BookBO'
+        lstCart.Items.Add(aTransaction)
+        'Update Subtotal'
+        txtCartSubtotal.Text = dblPrice * intQ
+
+    End Sub
+
 End Class

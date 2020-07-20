@@ -5,7 +5,10 @@
 'Date: 7/13/2020
 
 'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
+Imports BookBO.BookBO
 Public Class frmPublisher
+    'Creating a variable from a structure'
+    Private pubInfo As BookFeatures
     Private Sub PublishersBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles PublishersBindingNavigatorSaveItem.Click
         Me.Validate()
         Me.PublishersBindingSource.EndEdit()
@@ -21,9 +24,11 @@ Public Class frmPublisher
 
     Private Sub btnPublisherName_Click(sender As Object, e As EventArgs) Handles btnPublisherName.Click
         Try
+            'Referencing a field within the structure'
+            pubInfo.strPublisherName = txtPublisherName.Text
+            Me.PublishersTableAdapter.fillTablePubName(Me.BookStoreDataSet.publishers, pubInfo.strPublisherName)
 
-
-            Me.PublishersTableAdapter.fillTablePubName(Me.BookStoreDataSet.publishers, txtPublisherName.Text)
+            'Clear TextBox Values After Search'
             txtPublisherName.Text = String.Empty
 
         Catch ex As Exception

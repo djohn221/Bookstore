@@ -92,7 +92,6 @@
       <DependentUpon>frmSummaryScreen.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Book.vb" />
     <Compile Include="BookStoreDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -230,6 +229,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookBO\BookBO.vbproj">
+      <Project>{089d4abb-6543-4cca-ba8e-4298216776f8}</Project>
+      <Name>BookBO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookDO\BookDO.vbproj">
+      <Project>{ed756bb4-8711-47db-971d-3a8e024b1cda}</Project>
+      <Name>BookDO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
