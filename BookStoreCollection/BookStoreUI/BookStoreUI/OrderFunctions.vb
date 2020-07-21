@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports BookBO
 'Affirmation of Authorship:
 
 'Name: Darwin Chavez, David Johnson
@@ -14,49 +15,30 @@ Module OrderFunctions
         Return 0.065
     End Function
 
-    Public Function doesDBContain(dataset As DataSet, searchFor As String) As Boolean
-        'I highly doubt this will work, and find() my be better
+    Public Function genOrderNumber() As String
+        Dim rdm As New Random()
+        Dim allowChrs() As Char = "ABCDEFGHIJKLOMNOPQRSTUVWXYZ0123456789".ToCharArray()
+        Dim ord_num As String = ""
 
-        For Each dTable As DataTable In dataset.Tables
-            For Each dRow As DataRow In dTable.Rows
-                For index As Integer = 0 To dTable.Columns.Count - 1
-                    Return Convert.ToString(dRow(index)).Contains(searchFor)
-                Next
-            Next
+        For i As Integer = 0 To 4
+            ord_num += allowChrs(rdm.Next(0, allowChrs.Length))
         Next
 
-        Return False
-    End Function
+        Dim order As New OrderDO
 
-    Public Function doesDBContain(dtable As DataTable, searchFor As String) As Boolean
-        'I highly doubt this will work, and find() my be better
-        For Each dRow As DataRow In dtable.Rows
-            For index As Integer = 0 To dtable.Columns.Count - 1
-                Return Convert.ToString(dRow(index)).Contains(searchFor)
-            Next
-        Next
+        If order.doesDBContain(ord_num) Then
+            genOrderNumber()
+        Else
+            Return ord_num
+        End If
 
-        Return False
-    End Function
-
-    Public Function genOrderNumber()
-        Dim rand As New Random()
-        Dim sResult As String = ""
-        Dim adapter As New BookStoreDataSetTableAdapters.salesTableAdapter
-
-        Do
-            For i As Integer = 1 To 5
-                sResult &= ChrW(rand.Next(32, 126))
-            Next
-        Loop While doesDBContain(adapter.GetData, sResult)
-
-        Return sResult
     End Function
 
     Public Function getStoreID(name As String) As String
-        'WIP
-        'Must use functional co
-        Return "Will return store name"
+        Dim tempTable As New StoreDO()
+        Dim stor_id = tempTable.adapter.GetStoreID(name).ToString()
+
+        Return stor_id
     End Function
 
 End Module

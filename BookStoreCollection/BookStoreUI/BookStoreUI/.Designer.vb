@@ -36,7 +36,7 @@ Partial Class frmSummaryScreen
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboPayTerms = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnConfirm = New System.Windows.Forms.Button()
         Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
@@ -171,14 +171,15 @@ Partial Class frmSummaryScreen
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Order Summary"
         '
-        'ComboBox1
+        'cboPayTerms
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Pay In Advance", "Payment seven days after invoice date", "Payment ten days after invoice date", "Payment 30 days after invoice date", "Payment 60 days after invoice date", "Payment 90 days after invoice date"})
-        Me.ComboBox1.Location = New System.Drawing.Point(152, 432)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(185, 21)
-        Me.ComboBox1.TabIndex = 7
+        Me.cboPayTerms.AutoCompleteCustomSource.AddRange(New String() {"Pay In advance", "NET 10", "NET 30", "NET 60", "NET 90"})
+        Me.cboPayTerms.FormattingEnabled = True
+        Me.cboPayTerms.Items.AddRange(New Object() {"Pay In Advance", "Payment seven days after invoice date", "Payment ten days after invoice date", "Payment 30 days after invoice date", "Payment 60 days after invoice date", "Payment 90 days after invoice date"})
+        Me.cboPayTerms.Location = New System.Drawing.Point(152, 432)
+        Me.cboPayTerms.Name = "cboPayTerms"
+        Me.cboPayTerms.Size = New System.Drawing.Size(185, 21)
+        Me.cboPayTerms.TabIndex = 7
         '
         'Label2
         '
@@ -246,7 +247,7 @@ Partial Class frmSummaryScreen
         Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.btnConfirm)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cboPayTerms)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.grpOrderDetails)
         Me.Controls.Add(Me.lstCartItems)
@@ -273,7 +274,7 @@ Partial Class frmSummaryScreen
     Friend WithEvents SalesTableAdapter As BookStoreDataSetTableAdapters.salesTableAdapter
     Friend WithEvents TableAdapterManager As BookStoreDataSetTableAdapters.TableAdapterManager
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboPayTerms As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnConfirm As Button
     Friend WithEvents lblTax As Label

@@ -28,11 +28,20 @@ Public Class frmBookStore
     End Sub
 
     Private Sub frmBookStore_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'BookStoreDataSet.sales' table. You can move, or remove it, as needed.
+        Me.SalesTableAdapter.Fill(Me.BookStoreDataSet.sales)
 
     End Sub
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
         Me.Close()
+
+    End Sub
+
+    Private Sub SalesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles SalesBindingNavigatorSaveItem.Click
+        Me.Validate()
+        Me.SalesBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.BookStoreDataSet)
 
     End Sub
 End Class
