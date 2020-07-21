@@ -27,6 +27,13 @@ Public Class frmOrderScreen
 
 
     Private Sub btnCheckout_Click(sender As Object, e As EventArgs) Handles btnCheckout.Click
+        If cboStoreName.SelectedIndex = -1 Then
+            MessageBox.Show("There is no store selected.")
+            Exit Sub
+        ElseIf lstCart.Items.Count = 0 Then
+            MessageBox.Show("Plese add something to the cart.")
+            Exit Sub
+        End If
         frmSummaryScreen.ShowDialog()
     End Sub
 
@@ -56,24 +63,20 @@ Public Class frmOrderScreen
 
     Private Sub btnAddToCart_Click(sender As Object, e As EventArgs) Handles btnAddToCart.Click
 
-        'When addToCart button is selected, it will add titleID, titleName, Price and Quantity.'
-
         If String.IsNullOrWhiteSpace(mtbQuantity.Text) Then
             MessageBox.Show("Please Enter a Quantity Value.")
             Exit Sub
-        Else
-            Dim intQ As Integer = CType(mtbQuantity.Text, Integer)
-            Dim dblPrice As Double = CType(txtPrice.Text, Double)
-            Dim aTransaction As New BookBO.BookBO(txtTitleID.Text, txtTitleName.Text, dblPrice, intQ)
-
-            'Add item into Cart using reference variable aTransaction from class BookBO'
-            lstCart.Items.Add(aTransaction)
-            'Update Subtotal'
-            txtCartSubtotal.Text = dblPrice * intQ
+        ElseIf String.IsNullOrWhiteSpace(txtPrice.Text) Then
+            txtPrice.Text = "0.00"
         End If
+        Dim intQ As Integer = CType(mtbQuantity.Text, Integer)
+        Dim dblPrice As Double = CType(txtPrice.Text, Double)
+        Dim aTransaction As New BookBO.BookBO(txtTitleID.Text, txtTitleName.Text, dblPrice, intQ)
 
-
-
+        'Add item into Cart using reference variable aTransaction from class BookBO'
+        lstCart.Items.Add(aTransaction)
+        'Update Subtotal'
+        txtCartSubtotal.Text = dblPrice * intQ
 
 
     End Sub
