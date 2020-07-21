@@ -6,6 +6,7 @@
 
 'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
 Imports BookBO.BookBO
+
 Public Class frmTitles
     'Creating a variable from a structure'
     Private titleName As BookFeatures
@@ -27,6 +28,7 @@ Public Class frmTitles
             'Referencing a field within the structure'
             titleName.strTitleName = txtTitle.Text
             Me.TitlesTableAdapter.FillTitle(Me.BookStoreDataSet.titles, titleName.strTitleName)
+
             'Clear TextBox Values After Search'
             txtTitle.Text = String.Empty
         Catch ex As Exception

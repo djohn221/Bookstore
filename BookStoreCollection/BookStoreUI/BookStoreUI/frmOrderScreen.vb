@@ -58,18 +58,23 @@ Public Class frmOrderScreen
 
         'When addToCart button is selected, it will add titleID, titleName, Price and Quantity.'
 
-        Do While mtbQuantity.Text = String.Empty
+        If String.IsNullOrWhiteSpace(mtbQuantity.Text) Then
             MessageBox.Show("Please Enter a Quantity Value.")
-        Loop
+            Exit Sub
+        Else
+            Dim intQ As Integer = CType(mtbQuantity.Text, Integer)
+            Dim dblPrice As Double = CType(txtPrice.Text, Double)
+            Dim aTransaction As New BookBO.BookBO(txtTitleID.Text, txtTitleName.Text, dblPrice, intQ)
 
-        Dim intQ As Integer = CType(mtbQuantity.Text, Integer)
-        Dim dblPrice As Double = CType(txtPrice.Text, Double)
-        Dim aTransaction As New BookBO.BookBO(txtTitleID.Text, txtTitleName.Text, dblPrice, intQ)
+            'Add item into Cart using reference variable aTransaction from class BookBO'
+            lstCart.Items.Add(aTransaction)
+            'Update Subtotal'
+            txtCartSubtotal.Text = dblPrice * intQ
+        End If
 
-        'Add item into Cart using reference variable aTransaction from class BookBO'
-        lstCart.Items.Add(aTransaction)
-        'Update Subtotal'
-        txtCartSubtotal.Text = dblPrice * intQ
+
+
+
 
     End Sub
 

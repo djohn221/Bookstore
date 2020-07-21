@@ -24,8 +24,6 @@ Partial Class frmOrderScreen
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.lstCart = New System.Windows.Forms.ListBox()
-        Me.TitlesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
         Me.lblCatalog = New System.Windows.Forms.Label()
         Me.lblTitleName = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -40,13 +38,18 @@ Partial Class frmOrderScreen
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.txtTax = New System.Windows.Forms.TextBox()
         Me.txtCartSubtotal = New System.Windows.Forms.TextBox()
-        Me.TitlesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.titlesTableAdapter()
-        Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
         Me.cboStoreName = New System.Windows.Forms.ComboBox()
         Me.FKsalestitleid24927208BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.SalesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.salesTableAdapter()
         Me.TitlesDataGridView = New System.Windows.Forms.DataGridView()
+        Me.mtbQuantity = New System.Windows.Forms.MaskedTextBox()
+        Me.btnRemove = New System.Windows.Forms.Button()
+        Me.txtTitleID = New System.Windows.Forms.TextBox()
+        Me.lblTitleID = New System.Windows.Forms.Label()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
+        Me.lblPrice = New System.Windows.Forms.Label()
+        Me.TitlesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,16 +60,13 @@ Partial Class frmOrderScreen
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mtbQuantity = New System.Windows.Forms.MaskedTextBox()
-        Me.btnRemove = New System.Windows.Forms.Button()
-        Me.txtTitleID = New System.Windows.Forms.TextBox()
-        Me.lblTitleID = New System.Windows.Forms.Label()
-        Me.txtPrice = New System.Windows.Forms.TextBox()
-        Me.lblPrice = New System.Windows.Forms.Label()
-        CType(Me.TitlesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TitlesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.titlesTableAdapter()
+        Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
+        Me.SalesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.salesTableAdapter()
         CType(Me.FKsalestitleid24927208BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TitlesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TitlesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lstCart
@@ -78,16 +78,6 @@ Partial Class frmOrderScreen
         Me.lstCart.Name = "lstCart"
         Me.lstCart.Size = New System.Drawing.Size(666, 276)
         Me.lstCart.TabIndex = 0
-        '
-        'TitlesBindingSource
-        '
-        Me.TitlesBindingSource.DataMember = "titles"
-        Me.TitlesBindingSource.DataSource = Me.BookStoreDataSet
-        '
-        'BookStoreDataSet
-        '
-        Me.BookStoreDataSet.DataSetName = "BookStoreDataSet"
-        Me.BookStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'lblCatalog
         '
@@ -229,26 +219,6 @@ Partial Class frmOrderScreen
         Me.txtCartSubtotal.Size = New System.Drawing.Size(169, 22)
         Me.txtCartSubtotal.TabIndex = 19
         '
-        'TitlesTableAdapter
-        '
-        Me.TitlesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.authorsTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.discountsTableAdapter = Nothing
-        Me.TableAdapterManager.employeeTableAdapter = Nothing
-        Me.TableAdapterManager.jobsTableAdapter = Nothing
-        Me.TableAdapterManager.pub_infoTableAdapter = Nothing
-        Me.TableAdapterManager.publishersTableAdapter = Nothing
-        Me.TableAdapterManager.royschedTableAdapter = Nothing
-        Me.TableAdapterManager.salesTableAdapter = Nothing
-        Me.TableAdapterManager.storesTableAdapter = Nothing
-        Me.TableAdapterManager.titleauthorTableAdapter = Nothing
-        Me.TableAdapterManager.titlesTableAdapter = Me.TitlesTableAdapter
-        Me.TableAdapterManager.UpdateOrder = BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'cboStoreName
         '
         Me.cboStoreName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -275,10 +245,6 @@ Partial Class frmOrderScreen
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "Store Name:"
         '
-        'SalesTableAdapter
-        '
-        Me.SalesTableAdapter.ClearBeforeFill = True
-        '
         'TitlesDataGridView
         '
         Me.TitlesDataGridView.AutoGenerateColumns = False
@@ -288,68 +254,8 @@ Partial Class frmOrderScreen
         Me.TitlesDataGridView.Location = New System.Drawing.Point(32, 100)
         Me.TitlesDataGridView.Name = "TitlesDataGridView"
         Me.TitlesDataGridView.RowTemplate.Height = 24
-        Me.TitlesDataGridView.Size = New System.Drawing.Size(399, 290)
+        Me.TitlesDataGridView.Size = New System.Drawing.Size(464, 290)
         Me.TitlesDataGridView.TabIndex = 21
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "title_id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "title_id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "title"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "title"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "type"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "type"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "pub_id"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "pub_id"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "price"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "price"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "advance"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "advance"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "royalty"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "royalty"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "ytd_sales"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "ytd_sales"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "notes"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "notes"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "pubdate"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "pubdate"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         '
         'mtbQuantity
         '
@@ -412,6 +318,100 @@ Partial Class frmOrderScreen
         Me.lblPrice.TabIndex = 27
         Me.lblPrice.Text = "Price:"
         '
+        'TitlesBindingSource
+        '
+        Me.TitlesBindingSource.DataMember = "titles"
+        Me.TitlesBindingSource.DataSource = Me.BookStoreDataSet
+        '
+        'BookStoreDataSet
+        '
+        Me.BookStoreDataSet.DataSetName = "BookStoreDataSet"
+        Me.BookStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "title_id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "title_id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "title"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "title"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "type"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "type"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "pub_id"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "pub_id"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "price"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "price"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "advance"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "advance"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "royalty"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "royalty"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "ytd_sales"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "ytd_sales"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "notes"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "notes"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "pubdate"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "pubdate"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        '
+        'TitlesTableAdapter
+        '
+        Me.TitlesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.authorsTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.discountsTableAdapter = Nothing
+        Me.TableAdapterManager.employeeTableAdapter = Nothing
+        Me.TableAdapterManager.jobsTableAdapter = Nothing
+        Me.TableAdapterManager.pub_infoTableAdapter = Nothing
+        Me.TableAdapterManager.publishersTableAdapter = Nothing
+        Me.TableAdapterManager.royschedTableAdapter = Nothing
+        Me.TableAdapterManager.salesTableAdapter = Nothing
+        Me.TableAdapterManager.storesTableAdapter = Nothing
+        Me.TableAdapterManager.titleauthorTableAdapter = Nothing
+        Me.TableAdapterManager.titlesTableAdapter = Me.TitlesTableAdapter
+        Me.TableAdapterManager.UpdateOrder = BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'SalesTableAdapter
+        '
+        Me.SalesTableAdapter.ClearBeforeFill = True
+        '
         'frmOrderScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -444,10 +444,10 @@ Partial Class frmOrderScreen
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmOrderScreen"
         Me.Text = "Place Order"
-        CType(Me.TitlesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FKsalestitleid24927208BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TitlesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TitlesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
