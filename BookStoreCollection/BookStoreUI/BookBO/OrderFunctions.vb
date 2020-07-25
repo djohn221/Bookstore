@@ -7,7 +7,7 @@ Imports BookDO
 'Date: 7/13/2020
 
 'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
-Module OrderFunctions
+Public Module OrderFunctions
 
 
     'I was going to set different tax rates, but it is not needed.
@@ -36,7 +36,7 @@ Module OrderFunctions
 
     Public Function getStoreID(name As String) As String
         Dim tempTable As New StoreDO()
-        Dim stor_id = tempTable.adapter.GetStoreID(name).ToString()
+        Dim stor_id = tempTable.adapter.getStoreID(name).ToString()
 
         Return stor_id
     End Function

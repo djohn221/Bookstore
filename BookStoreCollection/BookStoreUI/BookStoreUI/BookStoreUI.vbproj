@@ -236,6 +236,10 @@
       <Project>{089d4abb-6543-4cca-ba8e-4298216776f8}</Project>
       <Name>BookBO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BookDO\BookDO.vbproj">
+      <Project>{ed756bb4-8711-47db-971d-3a8e024b1cda}</Project>
+      <Name>BookDO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
