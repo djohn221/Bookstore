@@ -1,7 +1,5 @@
 ﻿Imports System.Data.SqlClient
 Imports BookDO
-Imports OrderFunctions
-
 'Affirmation of Authorship:
 
 'Name: Darwin Chavez, David Johnson
@@ -11,9 +9,6 @@ Imports OrderFunctions
 'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
 Public Module OrderFunctions
 
-    Public Property SubTotal As Double
-    Public Property storeName As String
-    Public Property grandTotal As Double
 
     'I was going to set different tax rates, but it is not needed.
     Public Function getTax() As Double
@@ -31,30 +26,19 @@ Public Module OrderFunctions
 
         Dim order As New OrderDO
 
-        'If order number already exist in the database'
         If order.doesDBContain(ord_num) Then
-            'Generate New Order Number'
             genOrderNumber()
-            Return ord_num
-        Else 'Else Return random generated order number'
+        Else
             Return ord_num
         End If
 
     End Function
+
     Public Function getStoreID(name As String) As String
-        Dim tempTable As New StoreDO
-        Dim stor_id = tempTable.adapter.GetStoreID(name).ToString()
+        Dim tempTable As New StoreDO()
+        Dim stor_id = tempTable.adapter.getStoreID(name).ToString()
 
         Return stor_id
     End Function
-    Public Function getSubTotal(price As Double, quantity As Double) As Double
-        'SubTotal is product of Price x Q'
-        SubTotal += (price * quantity)
-        Return SubTotal
-    End Function
-    Public Function subtractSubTotal(price As Double, quantity As Double) As Double
-        'Removing Item and updating subtotal variable.'
-        SubTotal -= (price * quantity)
-        Return SubTotal
-    End Function
+
 End Module
