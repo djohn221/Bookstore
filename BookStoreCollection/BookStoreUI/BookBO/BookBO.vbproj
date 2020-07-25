@@ -66,12 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookBO.vb" />
-    <Compile Include="BookStoreDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="OrderDO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -87,7 +81,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="StoreDO.vb" />
+    <Compile Include="OrderFunctions.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -99,17 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="BookStoreDataSet.xsc">
-      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BookStoreDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BookStoreDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BookStoreDataSet.xss">
-      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -119,6 +102,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookDO\BookDO.vbproj">
+      <Project>{ed756bb4-8711-47db-971d-3a8e024b1cda}</Project>
+      <Name>BookDO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
