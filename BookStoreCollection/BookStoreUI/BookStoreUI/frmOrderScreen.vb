@@ -6,7 +6,13 @@
 
 'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
 Imports BookBO
+Imports OrderFunctions
+
 Public Class frmOrderScreen
+    Public Property dblSubtotal As Double
+    Public Property dblTax As Double
+    Public Property dblFinalTotal As Double
+
     Private Sub TitlesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.TitlesBindingSource.EndEdit()
@@ -25,7 +31,7 @@ Public Class frmOrderScreen
             MessageBox.Show("There is no store selected.")
             Exit Sub
         ElseIf lstCart.Items.Count = 0 Then
-            MessageBox.Show("Plese add something to the cart.")
+            MessageBox.Show("Please add something to the cart.")
             Exit Sub
         End If
         frmSummaryScreen.ShowDialog()
@@ -91,13 +97,22 @@ Public Class frmOrderScreen
 
         'Add item into Cart using reference variable aTransaction from class BookBO'
         lstCart.Items.Add(aTransaction)
-        Dim subTotal As Double = getSubTotal(aTransaction.dblPrice, aTransaction.intQuantity)
-        'Update Subtotal'
-        txtCartSubtotal.Text = subTotal
+
+        'dblSubtotal
+        'dblTax
+        'dblFinalTotal
+
+        'Create a variable to get the subtotal
+        dblSubtotal = getSubTotal(aTransaction.dblPrice, aTransaction.intQuantity)
+        'Update Subtotal TextBox'
+        txtCartSubtotal.Text = dblSubtotal
+
         'Tax is product of SubTotal and Tax
-        txtTax.Text = (getTax() * subTotal)
+        dblTax = (getTax() * dblSubtotal)
+        txtTax.Text = (dblTax)
+
         'GrandTotal = Subtotal + tax
-        grandTotal = (subTotal) + (subTotal * getTax())
+        grandTotal = (dblSubtotal + dblTax)
         txtTotal.Text = grandTotal
 
     End Sub

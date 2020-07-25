@@ -1,5 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports BookDO
+Imports OrderFunctions
+
 'Affirmation of Authorship:
 
 'Name: Darwin Chavez, David Johnson
@@ -7,7 +9,7 @@ Imports BookDO
 'Date: 7/13/2020
 
 'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
-Module OrderFunctions
+Public Module OrderFunctions
 
     Public Property SubTotal As Double
     Public Property storeName As String
@@ -40,7 +42,7 @@ Module OrderFunctions
 
     End Function
     Public Function getStoreID(name As String) As String
-        Dim tempTable As New StoreDO()
+        Dim tempTable As New StoreDO
         Dim stor_id = tempTable.adapter.GetStoreID(name).ToString()
 
         Return stor_id

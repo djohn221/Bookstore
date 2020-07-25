@@ -6,6 +6,7 @@
 
 'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
 Imports BookBO
+Imports BookDO
 
 Public Class frmSummaryScreen
     Private storeName, orderNumber, stor_id As String
