@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Imports BookBO
+Imports BookDO
 'Affirmation of Authorship:
 
 'Name: Darwin Chavez, David Johnson
