@@ -64,18 +64,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookStoreDataSet.Designer.vb">
-      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="BookStoreDataSet.vb">
-      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\BookStoreDataSet.Designer.vb">
+      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\BookStoreDataSet.vb">
+      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -97,20 +97,20 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="BookStoreDataSet.xsc">
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\BookStoreDataSet.xsc">
       <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BookStoreDataSet.xsd">
+    <None Include="My Project\BookStoreDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>BookStoreDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BookStoreDataSet.xss">
+    <None Include="My Project\BookStoreDataSet.xss">
       <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="My Project\Application.myapp">
-      <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

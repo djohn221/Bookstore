@@ -7,12 +7,6 @@
 'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
 Imports BookBO
 Public Class frmOrderScreen
-
-    Public SubTotal As Double = 0.00
-    Public storeName As String = ""
-    Public grandTotal As Double = 0.00
-
-
     Private Sub TitlesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.TitlesBindingSource.EndEdit()
@@ -43,18 +37,39 @@ Public Class frmOrderScreen
 
     Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
         'Removes item from selected list cart'
-        Try
-            If lstCart.Items.Count > 0 Then
-                lstCart.Items.RemoveAt(lstCart.SelectedIndex)
+        If lstCart.Items.Count > 0 Then
+            'Check if user selected an item from lstCart ListBox.'
+            If lstCart.SelectedIndex = -1 Then
+                MessageBox.Show("Please Select and Item.")
+                Exit Sub
             Else
-                MessageBox.Show("Cart is empty")
+                'Add Logic Here That will update the cart subtotal, tax, finalTotal'
+                'Get the Price and Quantity of item being removed.'
+                Dim dblPriceRemove As Double = lstCart.SelectedItem.dblPrice
+                Dim dblQuantityRemove As Double = CType(lstCart.SelectedItem.intQuantity, Double)
+
+                'Update Subtotal
+                Dim updatedSubtotal = subtractSubTotal(dblPriceRemove, dblQuantityRemove)
+                txtCartSubtotal.Text = updatedSubtotal
+
+                'Update Tax By Grabbing Tax of the item being removed(dblPriceRemv*dblQuantityRemv)
+                Dim dblTaxOfItem As Double = (getTax() * (dblPriceRemove * dblQuantityRemove))
+                Dim dblCurrTaxAmt As Double = CType(txtTax.Text.ToString(), Double)
+                txtTax.Text = dblCurrTaxAmt - dblTaxOfItem
+
+                'Update grandTotal
+                Dim updatedGrandTotal = ((dblTaxOfItem) + (dblPriceRemove * dblQuantityRemove))
+                txtTotal.Text = grandTotal - updatedGrandTotal
+
+                'Removing Item is last step.'
+                lstCart.Items.RemoveAt(lstCart.SelectedIndex)
+
             End If
-
-            'Add Logic Here That will update the cart subtotal, tax, finalTotal'
-
-        Catch ex As Exception
-            MessageBox.Show(ex, "Please select an item.")
-        End Try
+        Else
+            'Else Cart is empty
+            'lstCart.Items.Count <0 Then'
+            MessageBox.Show("Cart is empty")
+        End If
     End Sub
 
     Private Sub lstCart_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstCart.SelectedIndexChanged
@@ -69,15 +84,21 @@ Public Class frmOrderScreen
         ElseIf String.IsNullOrWhiteSpace(txtPrice.Text) Then
             txtPrice.Text = "0.00"
         End If
-        Dim intQ As Integer = CType(mtbQuantity.Text, Integer)
+
+        Dim dblQ As Double = CType(mtbQuantity.Text, Double)
         Dim dblPrice As Double = CType(txtPrice.Text, Double)
-        Dim aTransaction As New BookBO.BookBO(txtTitleID.Text, txtTitleName.Text, dblPrice, intQ)
+        Dim aTransaction As New BookBO.BookBO(txtTitleID.Text, txtTitleName.Text, dblPrice, dblQ)
 
         'Add item into Cart using reference variable aTransaction from class BookBO'
         lstCart.Items.Add(aTransaction)
+        Dim subTotal As Double = getSubTotal(aTransaction.dblPrice, aTransaction.intQuantity)
         'Update Subtotal'
-        txtCartSubtotal.Text = dblPrice * intQ
-
+        txtCartSubtotal.Text = subTotal
+        'Tax is product of SubTotal and Tax
+        txtTax.Text = (getTax() * subTotal)
+        'GrandTotal = Subtotal + tax
+        grandTotal = (subTotal) + (subTotal * getTax())
+        txtTotal.Text = grandTotal
 
     End Sub
 

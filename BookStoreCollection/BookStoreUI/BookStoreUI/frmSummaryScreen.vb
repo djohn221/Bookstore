@@ -23,15 +23,17 @@ Public Class frmSummaryScreen
         lstCartItems.Items.Clear()
         lstCartItems.Items.AddRange(frmOrderScreen.lstCart.Items)
         storeName = frmOrderScreen.cboStoreName.SelectedItem
-        subtotal = frmOrderScreen.SubTotal
+        'subtotal = frmOrderScreen.SubTotal
         orderNumber = OrderFunctions.genOrderNumber()
-        tax = OrderFunctions.getTax()
-        grandTotal = frmOrderScreen.grandTotal
+        tax = (OrderFunctions.getTax() * subtotal)
+        'grandTotal = frmOrderScreen.grandTotal
+
 
         lblStoreName.Text = storeName
-        lblSubTotal.Text = subtotal
+        lblSubTotal.Text = frmOrderScreen.txtCartSubtotal.Text
+        lblTax.Text = frmOrderScreen.txtTax.Text
         lblOrderNumber.Text = orderNumber
-        lblGrandTotal.Text = grandTotal
+        lblGrandTotal.Text = frmOrderScreen.txtTotal.Text
         stor_id = OrderFunctions.getStoreID(storeName)
         timeStamp = Date.Today
 

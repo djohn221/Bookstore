@@ -6,6 +6,7 @@ Public Class OrderDO
     Public ReadOnly Property Items As DataTable
         Get
             Dim table As DataTable = adapter.GetData()
+            Return table
         End Get
     End Property
 

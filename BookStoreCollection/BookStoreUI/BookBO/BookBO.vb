@@ -25,7 +25,9 @@
         intQuantity = bQuantity
 
     End Sub
-
+    Public Function getPrice() As String
+        Return dblPrice
+    End Function
     Public Overrides Function ToString() As String
         Return strTitleID & ", " & strTitleName _
              & ", " & dblPrice & ", " & intQuantity
