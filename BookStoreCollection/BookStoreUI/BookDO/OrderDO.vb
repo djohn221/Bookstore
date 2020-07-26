@@ -29,7 +29,6 @@ Public Class OrderDO
         If String.IsNullOrEmpty(adapter.doesOrdExist(searchFor)) Then
             Return False
         End If
-
         Return True
 
     End Function
