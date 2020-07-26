@@ -105,7 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BookDO\BookDO.vbproj">
-      <Project>{ed756bb4-8711-47db-971d-3a8e024b1cda}</Project>
+      <Project>{ED756BB4-8711-47DB-971D-3A8E024B1CDA}</Project>
       <Name>BookDO</Name>
     </ProjectReference>
   </ItemGroup>

@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -57,12 +57,24 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(localDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Kuro Churro\source\"& _ 
-            "repos\djohn221\Bookstore\BookStoreCollection\BookStoreUI\BookStoreUI\BookStore.m"& _ 
-            "df"";Integrated Security=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(localDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BookStore.mdf"& _ 
+            ";Integrated Security=True")>  _
         Public ReadOnly Property BookStoreConnectionString() As String
             Get
                 Return CType(Me("BookStoreConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=0B875FE9FE781E9A00CB6299AD8358"& _ 
+            "AE_LINEBOOKSTOREPROJ\BOOKSTORE\BOOKSTORECOLLECTION\BOOKSTOREUI\BOOKSTOREUI\BIN\D"& _ 
+            "EBUG\BOOKSTORE.MDF;Integrated Security=True")>  _
+        Public ReadOnly Property BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString() As String
+            Get
+                Return CType(Me("BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionStri"& _ 
+                    "ng"),String)
             End Get
         End Property
     End Class
