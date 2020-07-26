@@ -50,22 +50,22 @@ Public Class frmOrderScreen
                 Exit Sub
             Else
                 'Add Logic Here That will update the cart subtotal, tax, finalTotal'
+
                 'Get the Price and Quantity of item being removed.'
-                'Dim dblPriceRemove As Double = lstCart.SelectedItem.dblPrice
-                'Dim dblQuantityRemove As Double = CType(lstCart.SelectedItem.intQuantity, Double)
+                Dim dblPriceRemove As Double = lstCart.SelectedItem.dblPrice
+                Dim dblQuantityRemove As Double = CType(lstCart.SelectedItem.intQuantity, Double)
 
-                ''Update Subtotal
-                'Dim updatedSubtotal = subtractSubTotal(dblPriceRemove, dblQuantityRemove)
-                'txtCartSubtotal.Text = updatedSubtotal
+                'Update Subtotal
+                dblSubtotal = subtractSubTotal(dblPriceRemove, dblQuantityRemove)
+                txtCartSubtotal.Text = dblSubtotal
 
-                ''Update Tax By Grabbing Tax of the item being removed(dblPriceRemv*dblQuantityRemv)
-                'Dim dblTaxOfItem As Double = (getTax() * (dblPriceRemove * dblQuantityRemove))
-                'Dim dblCurrTaxAmt As Double = CType(txtTax.Text.ToString(), Double)
-                'txtTax.Text = dblCurrTaxAmt - dblTaxOfItem
+                'Update Tax By Grabbing Tax of the subtotal item being removed subtotal = (dblPriceRemv*dblQuantityRemv)
+                dblTax = (getTax() * dblSubtotal)
+                txtTax.Text = dblTax
 
-                ''Update grandTotal
-                'Dim updatedGrandTotal = ((dblTaxOfItem) + (dblPriceRemove * dblQuantityRemove))
-                'txtTotal.Text = grandTotal - updatedGrandTotal
+                'Update grandTotal
+                dblFinalTotal = (dblTax + dblSubtotal)
+                txtTotal.Text = dblFinalTotal
 
                 'Removing Item is last step.'
                 lstCart.Items.RemoveAt(lstCart.SelectedIndex)
@@ -97,10 +97,6 @@ Public Class frmOrderScreen
 
         'Add item into Cart using reference variable aTransaction from class BookBO'
         lstCart.Items.Add(aTransaction)
-
-        'dblSubtotal
-        'dblTax
-        'dblFinalTotal
 
         'Create a variable to get the subtotal
         dblSubtotal = getSubTotal(aTransaction.dblPrice, aTransaction.intQuantity)
