@@ -1,4 +1,5 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports BookDO
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmOrderScreen
     Inherits System.Windows.Forms.Form
 
@@ -25,7 +26,7 @@ Partial Class frmOrderScreen
         Me.components = New System.ComponentModel.Container()
         Me.lstCart = New System.Windows.Forms.ListBox()
         Me.TitlesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
+        Me.BookStoreDataSet = New BookDO.BookStoreDataSet()
         Me.lblCatalog = New System.Windows.Forms.Label()
         Me.lblTitleName = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -40,12 +41,12 @@ Partial Class frmOrderScreen
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.txtTax = New System.Windows.Forms.TextBox()
         Me.txtCartSubtotal = New System.Windows.Forms.TextBox()
-        Me.TitlesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.titlesTableAdapter()
-        Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
+        Me.TitlesTableAdapter = New BookDO.BookStoreDataSetTableAdapters.titlesTableAdapter()
+        Me.TableAdapterManager = New BookDO.BookStoreDataSetTableAdapters.TableAdapterManager()
         Me.cboStoreName = New System.Windows.Forms.ComboBox()
         Me.FKsalestitleid24927208BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.SalesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.salesTableAdapter()
+        Me.SalesTableAdapter = New BookDO.BookStoreDataSetTableAdapters.salesTableAdapter()
         Me.TitlesDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -247,7 +248,7 @@ Partial Class frmOrderScreen
         Me.TableAdapterManager.storesTableAdapter = Nothing
         Me.TableAdapterManager.titleauthorTableAdapter = Nothing
         Me.TableAdapterManager.titlesTableAdapter = Me.TitlesTableAdapter
-        Me.TableAdapterManager.UpdateOrder = BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = BookDO.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'cboStoreName
         '

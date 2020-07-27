@@ -1,4 +1,5 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿Imports BookDO
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmPublisher
     Inherits System.Windows.Forms.Form
 
@@ -47,9 +48,9 @@ Partial Class frmPublisher
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PublishersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
-        Me.PublishersTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.publishersTableAdapter()
-        Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
+        Me.BookStoreDataSet = New BookDO.BookStoreDataSet()
+        Me.PublishersTableAdapter = New BookDO.BookStoreDataSetTableAdapters.publishersTableAdapter()
+        Me.TableAdapterManager = New BookDO.BookStoreDataSetTableAdapters.TableAdapterManager()
         CType(Me.PublishersBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PublishersBindingNavigator.SuspendLayout()
         CType(Me.PublishersDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -267,7 +268,7 @@ Partial Class frmPublisher
         Me.TableAdapterManager.storesTableAdapter = Nothing
         Me.TableAdapterManager.titleauthorTableAdapter = Nothing
         Me.TableAdapterManager.titlesTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = BookDO.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'frmPublisher
         '

@@ -1,4 +1,5 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿Imports BookDO
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmBookStore
     Inherits System.Windows.Forms.Form
 
@@ -35,10 +36,10 @@ Partial Class frmBookStore
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
+        Me.BookStoreDataSet = New BookDO.BookStoreDataSet()
         Me.SalesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SalesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.salesTableAdapter()
-        Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
+        Me.SalesTableAdapter = New BookDO.BookStoreDataSetTableAdapters.salesTableAdapter()
+        Me.TableAdapterManager = New BookDO.BookStoreDataSetTableAdapters.TableAdapterManager()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.BookStoreDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SalesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,7 +154,7 @@ Partial Class frmBookStore
         Me.TableAdapterManager.storesTableAdapter = Nothing
         Me.TableAdapterManager.titleauthorTableAdapter = Nothing
         Me.TableAdapterManager.titlesTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = BookDO.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'frmBookStore
         '

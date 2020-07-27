@@ -94,14 +94,6 @@
       <DependentUpon>frmSummaryScreen.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookStoreDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="BookStoreDataSet.vb">
-      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frmOrderScreen.Designer.vb">
       <DependentUpon>frmOrderScreen.vb</DependentUpon>
     </Compile>
@@ -188,17 +180,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="BookStoreDataSet.xsc">
-      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BookStoreDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BookStoreDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BookStoreDataSet.xss">
-      <DependentUpon>BookStoreDataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -209,15 +190,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="BookStore.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BookStore_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>BookStore.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

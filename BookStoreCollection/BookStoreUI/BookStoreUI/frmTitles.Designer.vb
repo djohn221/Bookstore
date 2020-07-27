@@ -1,4 +1,5 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports BookDO
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmTitles
     Inherits System.Windows.Forms.Form
 
@@ -24,10 +25,10 @@ Partial Class frmTitles
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTitles))
-        Me.BookStoreDataSet = New BookStoreUI.BookStoreDataSet()
+        Me.BookStoreDataSet = New BookDO.BookStoreDataSet()
         Me.TitlesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TitlesTableAdapter = New BookStoreUI.BookStoreDataSetTableAdapters.titlesTableAdapter()
-        Me.TableAdapterManager = New BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager()
+        Me.TitlesTableAdapter = New BookDO.BookStoreDataSetTableAdapters.titlesTableAdapter()
+        Me.TableAdapterManager = New BookDO.BookStoreDataSetTableAdapters.TableAdapterManager()
         Me.TitlesBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
@@ -90,7 +91,7 @@ Partial Class frmTitles
         Me.TableAdapterManager.storesTableAdapter = Nothing
         Me.TableAdapterManager.titleauthorTableAdapter = Nothing
         Me.TableAdapterManager.titlesTableAdapter = Me.TitlesTableAdapter
-        Me.TableAdapterManager.UpdateOrder = BookStoreUI.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = BookDO.BookStoreDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'TitlesBindingNavigator
         '

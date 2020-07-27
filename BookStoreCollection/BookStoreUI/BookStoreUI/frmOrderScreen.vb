@@ -70,12 +70,12 @@ Public Class frmOrderScreen
 
                 'Removing Item is last step.'
                 lstCart.Items.RemoveAt(lstCart.SelectedIndex)
+                'Check If ListBox is empty'
                 If lstCart.Items.Count = 0 Then
                     txtCartSubtotal.Text = 0.0
                     txtTax.Text = 0.0
                     txtTotal.Text = 0.0
                 End If
-
 
             End If
         Else
