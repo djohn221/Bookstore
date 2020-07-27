@@ -57,15 +57,16 @@ Public Class frmOrderScreen
 
                 'Update Subtotal
                 dblSubtotal = subtractSubTotal(dblPriceRemove, dblQuantityRemove)
-                txtCartSubtotal.Text = dblSubtotal
+                txtCartSubtotal.Text = Strings.FormatCurrency(dblSubtotal)
 
                 'Update Tax By Grabbing Tax of the subtotal item being removed subtotal = (dblPriceRemv*dblQuantityRemv)
                 dblTax = (getTax() * dblSubtotal)
-                txtTax.Text = dblTax
+                txtTax.Text = Strings.FormatCurrency(dblTax)
 
                 'Update grandTotal
                 dblFinalTotal = (dblTax + dblSubtotal)
-                txtTotal.Text = dblFinalTotal
+                txtTotal.Text = Strings.FormatCurrency(dblFinalTotal)
+
 
                 'Removing Item is last step.'
                 lstCart.Items.RemoveAt(lstCart.SelectedIndex)
@@ -101,15 +102,15 @@ Public Class frmOrderScreen
         'Create a variable to get the subtotal
         dblSubtotal = getSubTotal(aTransaction.dblPrice, aTransaction.intQuantity)
         'Update Subtotal TextBox'
-        txtCartSubtotal.Text = dblSubtotal
+        txtCartSubtotal.Text = Strings.FormatCurrency(dblSubtotal)
 
         'Tax is product of SubTotal and Tax
         dblTax = (getTax() * dblSubtotal)
-        txtTax.Text = (dblTax)
+        txtTax.Text = Strings.FormatCurrency(dblTax)
 
         'GrandTotal = Subtotal + tax
         dblFinalTotal = (dblSubtotal + dblTax)
-        txtTotal.Text = dblFinalTotal
+        txtTotal.Text = Strings.FormatCurrency(dblFinalTotal)
 
     End Sub
 

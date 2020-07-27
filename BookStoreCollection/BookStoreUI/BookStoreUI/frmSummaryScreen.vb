@@ -9,8 +9,7 @@ Imports BookBO
 Imports BookDO
 
 Public Class frmSummaryScreen
-    Private storeName, orderNumber, stor_id As String
-    Private subtotal, tax, grandTotal As Double
+    Private storeName, orderNumber, stor_id, subtotal, tax, grandTotal As String
     Private timeStamp As Date
 
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
@@ -24,10 +23,9 @@ Public Class frmSummaryScreen
         lstCartItems.Items.Clear()
         lstCartItems.Items.AddRange(frmOrderScreen.lstCart.Items)
         storeName = frmOrderScreen.cboStoreName.SelectedItem
-        'subtotal = frmOrderScreen.SubTotal
         orderNumber = OrderFunctions.genOrderNumber()
-        tax = (OrderFunctions.getTax() * subtotal)
-        'grandTotal = frmOrderScreen.grandTotal
+        tax = frmOrderScreen.txtTax.Text
+        grandTotal = frmOrderScreen.txtTotal.Text
 
 
         lblStoreName.Text = storeName
@@ -44,7 +42,7 @@ Public Class frmSummaryScreen
         If cboPayTerms.SelectedIndex <> -1 Then
             Select Case MsgBox("Are you sure you're complete with this order?", MsgBoxStyle.YesNo, "Complete order")
                 Case MsgBoxResult.Yes
-                    MessageBox.Show("Thank you for your purchase from " + storeName + vbCrLf + vbCrLf + "Total: " + grandTotal.ToString() + vbCrLf + "Order Number: " + orderNumber)
+                    MessageBox.Show("Thank you for your purchase from " + storeName + vbCrLf + vbCrLf + "Total: " + grandTotal + vbCrLf + "Order Number: " + orderNumber)
                     frmOrderScreen.Close()
                     Me.Close()
                 Case MsgBoxResult.No
@@ -62,7 +60,7 @@ Public Class frmSummaryScreen
         Dim finishedOrder As New OrderDO()
 
         For Each order As BookBO.BookBO In frmOrderScreen.lstCart.Items
-            MessageBox.Show(stor_id + " " + orderNumber + " " + timeStamp + " " + order.intQuantity.ToString() + " " + cboPayTerms.Text + " " + order.strTitleID)
+            'MessageBox.Show(stor_id + " " + orderNumber + " " + timeStamp + " " + order.intQuantity.ToString() + " " + cboPayTerms.Text + " " + order.strTitleID)
             finishedOrder.NewInsert(stor_id, orderNumber, timeStamp, order.intQuantity, cboPayTerms.Text, order.strTitleID)
         Next
 
