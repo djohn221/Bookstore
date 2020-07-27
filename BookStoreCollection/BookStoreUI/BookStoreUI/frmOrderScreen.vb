@@ -46,7 +46,7 @@ Public Class frmOrderScreen
         If lstCart.Items.Count > 0 Then
             'Check if user selected an item from lstCart ListBox.'
             If lstCart.SelectedIndex = -1 Then
-                MessageBox.Show("Please Select and Item.")
+                MessageBox.Show("Please Select an Item.")
                 Exit Sub
             Else
                 'Add Logic Here That will update the cart subtotal, tax, finalTotal'
@@ -70,6 +70,12 @@ Public Class frmOrderScreen
 
                 'Removing Item is last step.'
                 lstCart.Items.RemoveAt(lstCart.SelectedIndex)
+                If lstCart.Items.Count = 0 Then
+                    txtCartSubtotal.Text = 0.0
+                    txtTax.Text = 0.0
+                    txtTotal.Text = 0.0
+                End If
+
 
             End If
         Else
