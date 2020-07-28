@@ -6,6 +6,7 @@
 
 'I affirm that this program was created by me. It is solely my work and ‘does not include any work done by an yon and anyone else.
 Imports BookBO
+Imports BookDO.BookStoreDataSet
 Imports OrderFunctions
 
 Public Class frmOrderScreen

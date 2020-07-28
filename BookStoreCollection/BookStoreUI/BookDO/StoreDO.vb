@@ -1,8 +1,7 @@
 ﻿Imports System.Windows.Forms
 
 Public Class StoreDO
-    Public adapter As New _
-        BookStoreDataSetTableAdapters.storesTableAdapter
+    Public adapter As New BookStoreDataSetTableAdapters.storesTableAdapter
     Private current As Integer
 
     Public Function Insert(ByVal storeId As String,

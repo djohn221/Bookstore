@@ -6517,7 +6517,7 @@ Namespace BookStoreDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString
+            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BookStoreConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7068,7 +7068,7 @@ Namespace BookStoreDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString
+            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BookStoreConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7380,7 +7380,7 @@ Namespace BookStoreDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString
+            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BookStoreConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7839,7 +7839,7 @@ Namespace BookStoreDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString
+            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BookStoreConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8165,7 +8165,7 @@ Namespace BookStoreDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString
+            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BookStoreConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8531,7 +8531,7 @@ Namespace BookStoreDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString
+            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BookStoreConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8968,7 +8968,7 @@ Namespace BookStoreDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString
+            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BookStoreConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9262,7 +9262,7 @@ Namespace BookStoreDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString
+            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BookStoreConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9275,7 +9275,7 @@ Namespace BookStoreDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT ord_num"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     sales"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (ord_num = @ord_num)"
+            Me._commandCollection(1).CommandText = "SELECT        ord_num"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            sales"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ord_num = @ord_num)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ord_num", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "ord_num", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
@@ -9780,7 +9780,7 @@ Namespace BookStoreDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString
+            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BookStoreConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10272,7 +10272,7 @@ Namespace BookStoreDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString
+            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BookStoreConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10726,7 +10726,7 @@ Namespace BookStoreDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BOOKSTORECOLLECTION_BOOKSTOREUI_BOOKSTOREUI_BIN_DEBUG_BOOKSTORE_MDFConnectionString
+            Me._connection.ConnectionString = Global.BookDO.My.MySettings.Default.BookStoreConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10741,7 +10741,7 @@ Namespace BookStoreDataSetTableAdapters
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT title_id, title, type, pub_id, price, advance, royalty, ytd_sales, notes, "& _ 
-                "pubdate"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     titles"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (title = @title)"
+                "pubdate FROM dbo.titles"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE title=@title"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@title", Global.System.Data.SqlDbType.VarChar, 80, Global.System.Data.ParameterDirection.Input, 0, 0, "title", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
